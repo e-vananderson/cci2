@@ -1,0 +1,1 @@
+<path to postgresql>\PostgreSQL\13\bin\pg_dump.exe --verbose --host=localhost --port=5432 --username=cesium --exclude-table-data *.temp* --exclude-table *.*_[0-9]{4}_[a-zA-Z]{3}_[0-9]{2}* --format=p --inserts -n "\"BIOSCALES\"" -n "public" ornlbsd

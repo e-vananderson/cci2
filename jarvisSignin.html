@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Note: need to put your own client ID in here -->
+    <meta name="google-signin-client_id" content="865956965372-emdrpiiurvqp032k7ggrm6e7vrrndu1h.apps.googleusercontent.com">
+</head>
+<body>
+<div id="my-signin2"></div>
+<!--<script src="jarvisCommands.js"></script>-->
+<script>
+    var appname='Jarvis';
+    function onSuccess(googleUser) {
+        console.log('Id: ' + googleUser.getBasicProfile().getId());
+        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+        console.log('Image: ' + googleUser.getBasicProfile().getImageUrl());
+        console.log('Email: ' + googleUser.getBasicProfile().getEmail());
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log('ID token: ' + id_token);
+
+        fetch('authorize.php', {
+        method: 'post',
+        headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+        body: 'GoogleToken=' + id_token})
+            // .then((response)=>response.text())
+            // .then((data)=>sessionStorage.setItem("response", data))
+            // .then(()=>window.location.replace("jarvisWorld.html"))// Goto jarvisWorld.html
+            .then(function(response) {
+                response.json().then(function(myJson) {
+                    sessionStorage.setItem("dbUserName", myJson[0]);
+                    sessionStorage.setItem("dbUserID", myJson[1]);
+                });
+            })
+            .then(()=>window.location.replace("jarvisWorld.html"))
+
+    }
+    function onFailure(error) {
+        console.log(error);
+    }
+    function renderButton() {
+        gapi.signin2.render('my-signin2', {
+            'scope': 'profile email',
+            'width': 240,
+            'height': 50,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,         'onfailure': onFailure
+        });
+    }
+</script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+<!-- HTML5 Input Form Elements -->
+<input id="fileupload" type="file" name="fileupload" />
+<button id="upload-button" onclick="uploadFile()"> Upload </button>
+
+<!-- Ajax JavaScript File Upload Logic -->
+<script>
+    async function uploadFile() {
+        let formData = new FormData();
+        formData.append("file", fileupload.files[0]);
+        await fetch('/upload.php', {
+            method: "POST",
+            body: formData
+        });
+        alert('The file has been uploaded successfully.');
+    }
+</script>
+</body>
+</html>

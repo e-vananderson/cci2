@@ -1,0 +1,345 @@
+// selecting an area with a rectangle from https://gist.github.com/theplatapi/0a7d789afc8028a3c20b
+var viewer = new Cesium.Viewer('cesiumContainer', {
+  targetFrameRate: 60,
+  homeButton: false,
+  sceneModePicker: false,
+  navigationHelpButton: false,
+  baseLayerPicker: false,
+  clock: new Cesium.Clock({
+    startTime: Cesium.JulianDate.fromIso8601('1880-01-01'),
+    currentTime: Cesium.JulianDate.fromIso8601('1880-01-01'),
+    stopTime: Cesium.JulianDate.fromIso8601("2013-12-01"),
+    clockRange: Cesium.ClockRange.CLAMPED,
+    canAnimate: false,
+    shouldAnimate: false,
+    multiplier: 31622400 //Fast forward 1 year a second
+  }),
+  imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
+    url: '//services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer',
+    enablePickFeatures: false
+  }),
+  //Saves GPU memory
+  scene3DOnly: true,
+  automaticallyTrackDataSourceClocks: false
+});
+
+viewer.scene.debugShowFramesPerSecond = true;
+viewer.scene.screenSpaceCameraController.enableTranslate = false;
+viewer.scene.screenSpaceCameraController.enableTilt = false;
+viewer.scene.screenSpaceCameraController.enableLook = false;
+viewer.scene.screenSpaceCameraController.enableCollisionDetection = false;
+viewer.imageryLayers.get(0).brightness = 0.7;
+
+var selector;
+var rectangleSelector = new Cesium.Rectangle();
+var screenSpaceEventHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+var cartesian = new Cesium.Cartesian3();
+var tempCartographic = new Cesium.Cartographic();
+var center = new Cesium.Cartographic();
+var firstPoint = new Cesium.Cartographic();
+var firstPointSet = false;
+var mouseDown = false;
+var camera = viewer.camera;
+/////added///////////////////
+var aRectangle = new Cesium.Rectangle(5.0, 3.0, 20.0, 11.0);
+console.log(aRectangle.north);
+//variable to hold the rectangle's center
+var rectangleCenter = new Cesium.Cartographic();
+/*
+Cesium.Rectangle.center(aRectangle, rectangleCenter); //how to get a rectangle's center
+console.log(rectangleCenter);
+var rectangleCenter = new Cesium.Cartesian2(aRectangle.x + aRectangle.width / 2.0, aRectangle.y + aRectangle.height / 2.0);
+*/
+////////////////////////////
+
+
+//Draw the selector while the user drags the mouse while holding shift
+screenSpaceEventHandler.setInputAction(function drawSelector(movement) {
+  if (!mouseDown) {
+    return;
+  }
+
+  cartesian = camera.pickEllipsoid(movement.endPosition, viewer.scene.globe.ellipsoid, cartesian);
+
+  if (cartesian) {
+    //mouse cartographic
+    tempCartographic = Cesium.Cartographic.fromCartesian(cartesian, Cesium.Ellipsoid.WGS84, tempCartographic);
+
+    if (!firstPointSet) {
+      Cesium.Cartographic.clone(tempCartographic, firstPoint);
+      firstPointSet = true;
+    }
+    else {
+      rectangleSelector.east = Math.max(tempCartographic.longitude, firstPoint.longitude);
+      rectangleSelector.west = Math.min(tempCartographic.longitude, firstPoint.longitude);
+      rectangleSelector.north = Math.max(tempCartographic.latitude, firstPoint.latitude);
+      rectangleSelector.south = Math.min(tempCartographic.latitude, firstPoint.latitude);
+      selector.show = true;
+      
+      /*
+      aRectangle.east = Math.max(tempCartographic.longitude, firstPoint.longitude);
+      aRectangle.west = Math.min(tempCartographic.longitude, firstPoint.longitude);
+      aRectangle.north = Math.max(tempCartographic.latitude, firstPoint.latitude);
+      aRectangle.south = Math.min(tempCartographic.latitude, firstPoint.latitude);
+      */     
+    }
+  }
+}, Cesium.ScreenSpaceEventType.MOUSE_MOVE, Cesium.KeyboardEventModifier.SHIFT);
+
+var getSelectorLocation = new Cesium.CallbackProperty(function getSelectorLocation(time, result) {
+    return Cesium.Rectangle.clone(rectangleSelector, result);
+  }, false);
+
+  screenSpaceEventHandler.setInputAction(function startClickShift() {
+    mouseDown = true;
+    selector.rectangle.coordinates = getSelectorLocation;
+  }, Cesium.ScreenSpaceEventType.LEFT_DOWN, Cesium.KeyboardEventModifier.SHIFT);
+
+  screenSpaceEventHandler.setInputAction(function endClickShift() {
+    mouseDown = false;
+    firstPointSet = false;
+    selector.rectangle.coordinates = rectangleSelector;
+    
+    ////////added to see if objects can be looped///////////////////
+    console.log('Mouse click is released!');
+    
+    /*
+    console.log('Rectangle west: ' + rectangleSelector.west);
+    console.log('Rectangle east: ' + rectangleSelector.east);
+    console.log('Rectangle north: ' + rectangleSelector.north);
+    console.log('Rectangle south: ' + rectangleSelector.south);
+    */
+    
+    
+    ///*    
+    Cesium.Rectangle.center(rectangleSelector, rectangleCenter);
+    
+    //console.log('Rectangle center: ' + rectangleCenter + ', width: ' + rectangleSelector.width +
+    //           ', Height: ' + rectangleSelector.height);
+    
+    let rectCartographic = rectangleCenter;
+    let rectCartesian3 = Cesium.Cartographic.toCartesian(rectCartographic);
+    let rectCart2 = Cesium.Cartesian2.fromCartesian3(rectCartesian3);
+    //*/
+    
+
+    ///*
+    console.log(viewer.scene);
+    console.log(rectCart2);
+    console.log(rectangleSelector.width);
+    console.log(rectangleSelector.height);
+    
+    for (var j = 0; j < gbl_entities.length; j++) {
+      var entity = gbl_entities[j];
+      var name = entity.name;
+      console.log(name);
+    }
+    
+    let pickedObjects = viewer.scene.drillPick(rectCart2, rectangleSelector.width, rectangleSelector.height);
+    //*/
+    console.log(typeof(pickedObjects));
+    //console.log('picked objectS: ' + pickedObjects);
+    for (var i = 0; i < pickedObjects.length; i++) {
+      console.log(pickedObjects[i]);
+    }                                              
+    //*/
+    
+    let pickedObject = viewer.scene.pick(rectCart2, rectangleSelector.width, rectangleSelector.height);   
+    //console.log('picked object: ' + pickedObject);
+
+    
+    var daEntities = drillPickEntities(viewer, rectCart2, rectangleSelector.width, rectangleSelector.height);
+    console.log(daEntities);
+    
+    /*
+    console.log('testing dataSource.description: ' + dataSource.description);
+    console.log('testing viewer.dataSources: ' + viewer.dataSources);
+    console.log('testing viewer.dataSources.description: ' + viewer.dataSources.description);
+    console.log('testing viewer.entities: ' + viewer.entities.description);
+    console.log('testing viewer: ' + viewer.description);
+    */
+    
+    /*
+    for (var j = 0; j < gbl_entities.length; j++) {
+      var entity = gbl_entities[j];
+      var name = entity.name;
+      console.log(name);
+    }
+    */
+    ////end added/////////////////////////////////////////////////
+    
+    
+    
+  }, Cesium.ScreenSpaceEventType.LEFT_UP, Cesium.KeyboardEventModifier.SHIFT);
+
+/////added////////////removed - rectangle obj does not have x or y members////////////
+
+    ///this may work instead?/////////////////////////////////////////
+    ///// from https://cesium.com/docs/tutorials/creating-entities/#managing-entities//////
+    ///*
+    function drillPickEntities(viewer, windowPosition, recWidth, recHeight) {  //will need rect width and height passed as well
+      console.log('drill pick function firing');  
+        var i;
+        var entity;
+        var picked;
+        var pickedPrimitives = viewer.scene.drillPick(windowPosition, recWidth, recHeight);
+        var length = pickedPrimitives.length;
+        var result = [];
+        var hash = {};
+
+        for (i = 0; i < length; i++) {
+          picked = pickedPrimitives[i];
+          entity = Cesium.defaultValue(picked.id, picked.primitive.id);
+          if (entity instanceof Cesium.Entity &&
+              !Cesium.defined(hash[entity.id])) {
+            result.push(entity);
+            hash[entity.id] = true;
+          }
+        }
+        return result;
+     }
+    //*/    
+    ///////////////////////////////////////////////////////////////////////////////
+
+
+//// from https://groups.google.com/g/cesium-dev/c/0GIEdSYVmy0
+//function getRectangleCenter(rectangle) {
+//    return new Cesium.Cartesian2(rectangle.x + rectangle.width / 2.0,
+//                                 rectangle.y + rectangle.height / 2.0);
+//}
+
+
+function buttonFunction() {
+    console.log('hallo');
+}
+
+/////////////////////////
+
+//Hide the selector by clicking anywhere
+screenSpaceEventHandler.setInputAction(function hideSelector() {
+  selector.show = false;
+}, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+
+selector = viewer.entities.add({
+  selectable: false,
+  show: false,
+  rectangle: {
+    coordinates: getSelectorLocation,
+    material: Cesium.Color.BLACK.withAlpha(0.5)
+  }
+});
+
+
+////////added drag and drop////////////////////////////
+//  from https://cesium.com/docs/cesiumjs-ref-doc/viewerDragDropMixin.html
+/*
+viewer.extend(Cesium.viewerDragDropMixin);
+viewer.dropError.addEventListener(function(viewerArg, source, error) {
+    window.alert('Error processing ' + source + ':' + error);
+});
+//clearOnDrop set to false to prevent rectangle selections from being removed
+viewer.clearOnDrop = false;
+*/
+///////////////////////////////////////////////////////
+
+//////geojson upload test///////////////////////////////
+/*
+var dataSource = Cesium.GeoJsonDataSource.load(
+  "../SampleData/simplestyles.geojson"
+);
+viewer.dataSources.add(dataSource);
+viewer.zoomTo(dataSource);
+
+*/
+
+// loadUrl method /////////////////////////////////////////////////////////
+// from https://stackoverflow.com/questions/26395782/cesiumjs-how-to-iterate-data-from-geojsondatasource
+/*
+var dataSource = new Cesium.GeoJsonDataSource();
+dataSource.loadUrl('../SampleData/simplestyles.geojson').then(function() {
+    var entities = dataSource.entities.entities;
+    for (var i = 0; i < entities.length; i++) {
+        var entity = entities[i];
+        console.log('testing entity #' + i + ': ' + entity.id);
+    }
+});
+viewer.dataSources.add(dataSource);
+*/
+////////////////////////////////////////////////////////
+
+// promise method////////////////////////////////////////
+///*
+// from https://sandcastle.cesium.com/index.html?src=GeoJSON%20and%20TopoJSON.html
+// The promise system: https://promisesaplus.com/
+var gbl_entities; //can entities be accessed outside of the function?
+var promise = Cesium.GeoJsonDataSource.load(
+  "../SampleData/simplestyles.geojson"
+);
+promise
+    .then(function (dataSource) {
+      viewer.dataSources.add(dataSource);
+      viewer.zoomTo(dataSource);
+  
+      gbl_entities = dataSource.entities.values; //can entities be accessed outside of the function?
+  
+    /* //loop through geojson data after load
+      //Get the array of entities
+      var entities = dataSource.entities.values;
+      for (var i = 0; i < entities.length; i++) {
+        var entity = entities[i];
+        var name = entity.name;
+         console.log(name);
+      }
+      */
+  
+    })
+    .otherwise(function (error) {
+      //Display any errrors encountered while loading.
+      window.alert(error);
+    });
+//*/
+///////////////////////////////////////////////////
+
+///////////ADDED/////////////////////////////////////////////////////
+
+
+/// object testing ////////////////////////////////////////////
+/*
+
+viewer.entities.values.forEach((number, index) => {
+    console.log('Index: ' + index + ' Value: ' + number);
+});
+
+console.log('testing dataSource.description: ' + dataSource.description);
+console.log('testing viewer.dataSources: ' + viewer.dataSources);
+console.log('testing viewer.dataSources.description: ' + viewer.dataSources.description);
+console.log('testing viewer.entities: ' + viewer.entities.description);
+console.log('testing viewer: ' + viewer.description);
+console.log('testing Cesium.Entity.entityCollection: ' + Cesium.Entity.entityCollection); 
+
+var anEntityCollection = new Cesium.EntityCollection(dataSource);
+console.log('testing anEntityCollection: ' + anEntityCollection);
+
+var wtf = anEntityCollection.values;
+console.log('testing anEntityCollection.values: ' + wtf);
+
+*/
+//var entities = dataSource.entities.values;
+
+
+//*/
+///////////////// end object testing /////////////////////////////////
+
+// get entity collection
+//drillPick(windowPosition, limit, width, height)
+//let pickedObjects = viewer.scene.drillPick(centerRectangle, null,
+//                                          rectangle.width, rectangle.height);
+//let pickedObjects = viewer.scene.drillPick(getSelectorLocation);
+
+//pick(windowPosition, width, height)
+
+//for (let obj of pickedObjects){
+//  console.log(obj);
+//}
+/////////////////////////////////////////////////////////////////////
