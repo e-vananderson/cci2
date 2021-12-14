@@ -1,0 +1,130 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-124.19336, 48.587531]
+			},
+			"properties": {
+				"latitude": 48.58753124,
+				"longitude": -124.1933599,
+				"object_id": 64,
+				"speed_kph": 0.01852,
+				"direction_of_travel_deg": 245.25,
+				"receiver_name": "Eos Positioning Systems #19092566",
+				"horizontal_accuracy_m": 0.178227383,
+				"vertical_accuracy_m": 0.322,
+				"altitude": 40.832,
+				"pdop": 1.0,
+				"hdop": 0.5,
+				"vdop": 0.8,
+				"fix_type": 2.0,
+				"correction_age": 5.0,
+				"station_id": 131.0,
+				"number_of_satellites": 33.0,
+				"fix_time": "9/5/2020 17:53",
+				"global_id": "bcad63f2-e7cd-48e2-9351-12794e1ad387",
+				"creation_date": "9/22/2020 17:54",
+				"creator": "schadtcw",
+				"edit_date": "9/5/2020 17:54",
+				"editor": "schadtcw",
+				"sample_name": "BESC-360-Co2_62_25"
+			}
+		}, {
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-124.193385, 48.587532]
+			},
+			"properties": {
+				"latitude": 48.58753237,
+				"longitude": -124.1933851,
+				"object_id": 63,
+				"speed_kph": 0.0926,
+				"direction_of_travel_deg": 156.29,
+				"receiver_name": "Eos Positioning Systems #19092566",
+				"horizontal_accuracy_m": 0.145244621,
+				"vertical_accuracy_m": 0.266,
+				"altitude": 41.174,
+				"pdop": 1.0,
+				"hdop": 0.5,
+				"vdop": 0.9,
+				"fix_type": 2.0,
+				"correction_age": 7.0,
+				"station_id": 131.0,
+				"number_of_satellites": 32.0,
+				"fix_time": "9/5/2020 17:50",
+				"global_id": "3cd97883-7f39-49ce-9d8b-f928d46adc3b",
+				"creation_date": "9/22/2020 17:51",
+				"creator": "schadtcw",
+				"edit_date": "9/5/2020 17:51",
+				"editor": "schadtcw",
+				"sample_name": "GW-9591-Co2_62_24"
+			}
+		}, {
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-124.193689, 48.587539]
+			},
+			"properties": {
+				"latitude": 48.58753928,
+				"longitude": -124.193689,
+				"object_id": 62,
+				"speed_kph": 0.07408,
+				"direction_of_travel_deg": 312.42,
+				"receiver_name": "Eos Positioning Systems #19092566",
+				"horizontal_accuracy_m": 0.172884354,
+				"vertical_accuracy_m": 0.319,
+				"altitude": 41.566,
+				"pdop": 1.0,
+				"hdop": 0.5,
+				"vdop": 0.9,
+				"fix_type": 2.0,
+				"correction_age": 7.0,
+				"station_id": 131.0,
+				"number_of_satellites": 32.0,
+				"fix_time": "9/5/2020 17:46",
+				"global_id": "d3b69600-7f90-4c30-aa9d-1a8fc761b640",
+				"creation_date": "9/20/2020 17:47",
+				"creator": "schadtcw",
+				"edit_date": "9/5/2020 17:47",
+				"editor": "schadtcw",
+				"sample_name": "BESC-307-Co2_62_14"
+			}
+		}, {
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-124.193264, 48.587562]
+			},
+			"properties": {
+				"latitude": 48.58756213,
+				"longitude": -124.1932642,
+				"object_id": 65,
+				"speed_kph": 0.01852,
+				"direction_of_travel_deg": 111.48,
+				"receiver_name": "Eos Positioning Systems #19092566",
+				"horizontal_accuracy_m": 0.151980262,
+				"vertical_accuracy_m": 0.276,
+				"altitude": 40.806,
+				"pdop": 1.0,
+				"hdop": 0.5,
+				"vdop": 0.9,
+				"fix_type": 2.0,
+				"correction_age": 6.0,
+				"station_id": 131.0,
+				"number_of_satellites": 32.0,
+				"fix_time": "9/5/2020 17:56",
+				"global_id": "2dec5e0e-1ba3-43e3-9381-6a004b078855",
+				"creation_date": "9/20/2020 17:57",
+				"creator": "schadtcw",
+				"edit_date": "9/5/2020 17:57",
+				"editor": "schadtcw",
+				"sample_name": "BESC-845-Co2_60_28"
+			}
+		}
+	]
+}

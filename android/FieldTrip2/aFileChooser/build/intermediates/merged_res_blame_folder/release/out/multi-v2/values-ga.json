@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\res\\merged\\release\\values-ga\\values-ga.xml",
+            "map": [
+                {
+                    "source": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\src\\main\\res\\values-ga\\strings.xml",
+                    "from": {
+                        "startLines": "3,5,4",
+                        "startColumns": "2,4,2",
+                        "startOffsets": "85,238,146",
+                        "endColumns": "60,90,89",
+                        "endOffsets": "143,324,233"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,118,209",
+                        "endColumns": "62,90,91",
+                        "endOffsets": "113,204,296"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ga\\values-ga.xml",
+            "map": [
+                {
+                    "source": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\src\\main\\res\\values-ga\\strings.xml",
+                    "from": {
+                        "startLines": "3,5,4",
+                        "startColumns": "2,4,2",
+                        "startOffsets": "85,238,146",
+                        "endColumns": "60,90,89",
+                        "endOffsets": "143,324,233"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,118,209",
+                        "endColumns": "62,90,91",
+                        "endOffsets": "113,204,296"
+                    }
+                }
+            ]
+        }
+    ]
+}

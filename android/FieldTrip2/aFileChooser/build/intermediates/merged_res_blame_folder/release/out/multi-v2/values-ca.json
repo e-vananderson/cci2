@@ -1,0 +1,82 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ca\\values-ca.xml",
+            "map": [
+                {
+                    "source": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\src\\main\\res\\values-ca\\strings.xml",
+                    "from": {
+                        "startLines": "3,5,4",
+                        "startColumns": "2,4,2",
+                        "startOffsets": "85,227,141",
+                        "endColumns": "55,79,83",
+                        "endOffsets": "138,302,222"
+                    },
+                    "to": {
+                        "startLines": "2,3,5",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,113,294",
+                        "endColumns": "57,79,85",
+                        "endOffsets": "108,188,375"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\evana\\.gradle\\caches\\transforms-2\\files-2.1\\6eebd247005afbb0f481995ad149addc\\support-compat-28.0.0\\res\\values-ca\\values-ca.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "193",
+                        "endColumns": "100",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\res\\merged\\release\\values-ca\\values-ca.xml",
+            "map": [
+                {
+                    "source": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\src\\main\\res\\values-ca\\strings.xml",
+                    "from": {
+                        "startLines": "3,5,4",
+                        "startColumns": "2,4,2",
+                        "startOffsets": "85,227,141",
+                        "endColumns": "55,79,83",
+                        "endOffsets": "138,302,222"
+                    },
+                    "to": {
+                        "startLines": "2,3,5",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,113,294",
+                        "endColumns": "57,79,85",
+                        "endOffsets": "108,188,375"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\evana\\.gradle\\caches\\transforms-2\\files-2.1\\6eebd247005afbb0f481995ad149addc\\support-compat-28.0.0\\res\\values-ca\\values-ca.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "193",
+                        "endColumns": "100",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        }
+    ]
+}

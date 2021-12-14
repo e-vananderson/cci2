@@ -1,0 +1,479 @@
+{
+	"biosample_set": [{
+		"id": "BioScales:BESC-845-Co2_60_28_SC",
+		"location": "BESC-845-Co2_60_28",
+		"lat_lon": {
+			"has_raw_value": "44.5875 -123.1932",
+			"latitude": 44.5875,
+			"longitude": -123.1932
+		},
+		"source_mat_id": {
+			"has_raw_value": "BESC-845-Co2_60_28_SC",
+			"type": "sample_id"
+		},
+		"misc_param": {
+			"has_raw_value": "348",
+			"has_unit": "ppm CaCO3/pH",
+			"has_numeric_value": 348,
+			"type": "lbc"
+		},
+		"misc_param": {
+			"has_raw_value": "1009.2",
+			"has_unit": "ppm CaCO3/pH",
+			"has_numeric_value": 1009.2,
+			"type": "lb_ceq"
+		},
+		"ph": {
+			"has_raw_value": "6.37",
+			"has_numeric_value": 6.37,
+			"type": "ph"
+		},
+		"calcium": {
+			"has_raw_value": "1496",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 1496,
+			"type": "ca"
+		},
+		"potassium": {
+			"has_raw_value": "118.7408",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 118.7408,
+			"type": "k"
+		},
+		"magnesium": {
+			"has_raw_value": "294.4939",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 294.4939,
+			"type": "mg"
+		},
+		"misc_param": {
+			"has_raw_value": "11.751",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 11.751,
+			"type": "mn"
+		},
+		"misc_param": {
+			"has_raw_value": "97.1426",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 97.1426,
+			"type": "p"
+		},
+		"misc_param": {
+			"has_raw_value": "1.5662",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 1.5662,
+			"type": "zn"
+		},
+		"misc_param": {
+			"has_raw_value": "2.54032905",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 2.54032905,
+			"type": "ammonium"
+		},
+		"misc_param": {
+			"has_raw_value": "0",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 0,
+			"type": "no2"
+		},
+		"misc_param": {
+			"has_raw_value": "1.0623839999999998",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 1.0623839999999998,
+			"type": "no3"
+		},
+		"tot_carb": {
+			"has_raw_value": "0.864",
+			"has_unit": "%",
+			"has_numeric_value": 0.864,
+			"type": "c"
+		},
+		"tot_nitro_content": {
+			"has_raw_value": "0.06",
+			"has_unit": "%",
+			"has_numeric_value": 0.06,
+			"type": "n"
+		},
+		"water_content": {
+			"has_raw_value": "3.2351050500260072",
+			"has_unit": "%",
+			"has_numeric_value": 3.2351050500260072,
+			"type": "soil_moisture"
+		},
+		"collection_date": {
+			"has_raw_value": "09-2020-05T11:11:00",
+			"type": "collection_date"
+		},
+		"geo_loc_name": {
+			"has_raw_value": "Corvallis",
+			"type": "site"
+		},
+		"misc_param": {
+			"has_raw_value": "4.21",
+			"has_numeric_value": 4.21,
+			"type": "total_tree_height"
+		},
+		"misc_param": {
+			"has_raw_value": "1.7",
+			"has_numeric_value": 1.7,
+			"type": "dbh"
+		}
+	}, {
+		"id": "BioScales:BESC-234-Co2_52_27_SC",
+		"location": "BESC-234-Co2_52_27",
+		"lat_lon": {
+			"has_raw_value": "44.58766928 -123.19330090000001",
+			"latitude": 44.58766928,
+			"longitude": -123.19330090000001
+		},
+		"source_mat_id": {
+			"has_raw_value": "BESC-234-Co2_52_27_SC",
+			"type": "sample_id"
+		},
+		"misc_param": {
+			"has_raw_value": "352",
+			"has_unit": "ppm CaCO3/pH",
+			"has_numeric_value": 352,
+			"type": "lbc"
+		},
+		"misc_param": {
+			"has_raw_value": "1020.8",
+			"has_unit": "ppm CaCO3/pH",
+			"has_numeric_value": 1020.8,
+			"type": "lb_ceq"
+		},
+		"ph": {
+			"has_raw_value": "6.78",
+			"has_numeric_value": 6.78,
+			"type": "ph"
+		},
+		"calcium": {
+			"has_raw_value": "1673.1016",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 1673.1016,
+			"type": "ca"
+		},
+		"potassium": {
+			"has_raw_value": "146.7839",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 146.7839,
+			"type": "k"
+		},
+		"magnesium": {
+			"has_raw_value": "331.6863",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 331.6863,
+			"type": "mg"
+		},
+		"misc_param": {
+			"has_raw_value": "10.6006",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 10.6006,
+			"type": "mn"
+		},
+		"misc_param": {
+			"has_raw_value": "100.5901",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 100.5901,
+			"type": "p"
+		},
+		"misc_param": {
+			"has_raw_value": "2.0413",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 2.0413,
+			"type": "zn"
+		},
+		"misc_param": {
+			"has_raw_value": "2.0327664000000003",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 2.0327664000000003,
+			"type": "ammonium"
+		},
+		"misc_param": {
+			"has_raw_value": "0",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 0,
+			"type": "no2"
+		},
+		"misc_param": {
+			"has_raw_value": "3.8201557999999998",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 3.8201557999999998,
+			"type": "no3"
+		},
+		"tot_carb": {
+			"has_raw_value": "0.848",
+			"has_unit": "%",
+			"has_numeric_value": 0.848,
+			"type": "c"
+		},
+		"tot_nitro_content": {
+			"has_raw_value": "0.063",
+			"has_unit": "%",
+			"has_numeric_value": 0.063,
+			"type": "n"
+		},
+		"water_content": {
+			"has_raw_value": "5.259945501042631",
+			"has_unit": "%",
+			"has_numeric_value": 5.259945501042631,
+			"type": "soil_moisture"
+		},
+		"collection_date": {
+			"has_raw_value": "09-2020-05T13:00:00",
+			"type": "collection_date"
+		},
+		"geo_loc_name": {
+			"has_raw_value": "Corvallis",
+			"type": "site"
+		},
+		"misc_param": {
+			"has_raw_value": "4.72",
+			"has_numeric_value": 4.72,
+			"type": "total_tree_height"
+		},
+		"misc_param": {
+			"has_raw_value": "2",
+			"has_numeric_value": 2,
+			"type": "dbh"
+		}
+	}, {
+		"id": "BioScales:BESC-360-Co2_62_25_SC",
+		"location": "BESC-360-Co2_62_25",
+		"lat_lon": {
+			"has_raw_value": "44.58753124 -123.19335990000002",
+			"latitude": 44.58753124,
+			"longitude": -123.19335990000002
+		},
+		"source_mat_id": {
+			"has_raw_value": "BESC-360-Co2_62_25_SC",
+			"type": "sample_id"
+		},
+		"misc_param": {
+			"has_raw_value": "499",
+			"has_unit": "ppm CaCO3/pH",
+			"has_numeric_value": 499,
+			"type": "lbc"
+		},
+		"misc_param": {
+			"has_raw_value": "1447.1",
+			"has_unit": "ppm CaCO3/pH",
+			"has_numeric_value": 1447.1,
+			"type": "lb_ceq"
+		},
+		"ph": {
+			"has_raw_value": "6.72",
+			"has_numeric_value": 6.72,
+			"type": "ph"
+		},
+		"calcium": {
+			"has_raw_value": "2331.8356",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 2331.8356,
+			"type": "ca"
+		},
+		"potassium": {
+			"has_raw_value": "251.4762",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 251.4762,
+			"type": "k"
+		},
+		"magnesium": {
+			"has_raw_value": "397.5362",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 397.5362,
+			"type": "mg"
+		},
+		"misc_param": {
+			"has_raw_value": "23.085",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 23.085,
+			"type": "mn"
+		},
+		"misc_param": {
+			"has_raw_value": "119.2262",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 119.2262,
+			"type": "p"
+		},
+		"misc_param": {
+			"has_raw_value": "6.7812",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 6.7812,
+			"type": "zn"
+		},
+		"misc_param": {
+			"has_raw_value": "10.442456850000001",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 10.442456850000001,
+			"type": "ammonium"
+		},
+		"misc_param": {
+			"has_raw_value": "0",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 0,
+			"type": "no2"
+		},
+		"misc_param": {
+			"has_raw_value": "6.210519799999999",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 6.210519799999999,
+			"type": "no3"
+		},
+		"tot_carb": {
+			"has_raw_value": "2.344",
+			"has_unit": "%",
+			"has_numeric_value": 2.344,
+			"type": "c"
+		},
+		"tot_nitro_content": {
+			"has_raw_value": "0.433",
+			"has_unit": "%",
+			"has_numeric_value": 0.433,
+			"type": "n"
+		},
+		"water_content": {
+			"has_raw_value": "6.90542746564346",
+			"has_unit": "%",
+			"has_numeric_value": 6.90542746564346,
+			"type": "soil_moisture"
+		},
+		"collection_date": {
+			"has_raw_value": "09-2020-03T15:15:00",
+			"type": "collection_date"
+		},
+		"geo_loc_name": {
+			"has_raw_value": "Corvallis",
+			"type": "site"
+		},
+		"misc_param": {
+			"has_raw_value": "6.61",
+			"has_numeric_value": 6.61,
+			"type": "total_tree_height"
+		},
+		"misc_param": {
+			"has_raw_value": "4.6",
+			"has_numeric_value": 4.6,
+			"type": "dbh"
+		}
+	}, {
+		"id": "BioScales:GW-9591-Co2_62_24_SC",
+		"location": "GW-9591-Co2_62_24",
+		"lat_lon": {
+			"has_raw_value": "44.58753237 -123.1933851",
+			"latitude": 44.58753237,
+			"longitude": -123.1933851
+		},
+		"source_mat_id": {
+			"has_raw_value": "GW-9591-Co2_62_24_SC",
+			"type": "sample_id"
+		},
+		"misc_param": {
+			"has_raw_value": "377",
+			"has_unit": "ppm CaCO3/pH",
+			"has_numeric_value": 377,
+			"type": "lbc"
+		},
+		"misc_param": {
+			"has_raw_value": "1093.3",
+			"has_unit": "ppm CaCO3/pH",
+			"has_numeric_value": 1093.3,
+			"type": "lb_ceq"
+		},
+		"ph": {
+			"has_raw_value": "6.48",
+			"has_numeric_value": 6.48,
+			"type": "ph"
+		},
+		"calcium": {
+			"has_raw_value": "1764.8638",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 1764.8638,
+			"type": "ca"
+		},
+		"potassium": {
+			"has_raw_value": "222.7384",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 222.7384,
+			"type": "k"
+		},
+		"magnesium": {
+			"has_raw_value": "312.3001",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 312.3001,
+			"type": "mg"
+		},
+		"misc_param": {
+			"has_raw_value": "14.6228",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 14.6228,
+			"type": "mn"
+		},
+		"misc_param": {
+			"has_raw_value": "121.937",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 121.937,
+			"type": "p"
+		},
+		"misc_param": {
+			"has_raw_value": "3.4332",
+			"has_unit": "mg/kg (ppm)",
+			"has_numeric_value": 3.4332,
+			"type": "zn"
+		},
+		"misc_param": {
+			"has_raw_value": "2.76171945",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 2.76171945,
+			"type": "ammonium"
+		},
+		"misc_param": {
+			"has_raw_value": "0",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 0,
+			"type": "no2"
+		},
+		"misc_param": {
+			"has_raw_value": "3.7006375999999994",
+			"has_unit": "mg/kg",
+			"has_numeric_value": 3.7006375999999994,
+			"type": "no3"
+		},
+		"tot_carb": {
+			"has_raw_value": "1.192",
+			"has_unit": "%",
+			"has_numeric_value": 1.192,
+			"type": "c"
+		},
+		"tot_nitro_content": {
+			"has_raw_value": "0.25",
+			"has_unit": "%",
+			"has_numeric_value": 0.25,
+			"type": "n"
+		},
+		"water_content": {
+			"has_raw_value": "4.381694994547781",
+			"has_unit": "%",
+			"has_numeric_value": 4.381694994547781,
+			"type": "soil_moisture"
+		},
+		"collection_date": {
+			"has_raw_value": "09-2020-03T15:45:00",
+			"type": "collection_date"
+		},
+		"geo_loc_name": {
+			"has_raw_value": "Corvallis",
+			"type": "site"
+		},
+		"misc_param": {
+			"has_raw_value": "5.41",
+			"has_numeric_value": 5.41,
+			"type": "total_tree_height"
+		},
+		"misc_param": {
+			"has_raw_value": "3.3",
+			"has_numeric_value": 3.3,
+			"type": "dbh"
+		}
+	}]
+}

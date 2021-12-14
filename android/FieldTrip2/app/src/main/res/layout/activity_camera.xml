@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+            android:id="@+id/img_view"
+            android:src="@android:drawable/ic_menu_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/btn_end"
+            android:layout_above="@+id/btn_camera"/>
+
+    <Button
+            android:id="@+id/btn_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:onClick="takePicture"
+            android:text="@string/btn_camera"/>
+    <Button
+            android:text="@string/btn_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/btn_end"
+            android:layout_centerHorizontal="true"
+            android:onClick="endTrip"/>
+
+</RelativeLayout>

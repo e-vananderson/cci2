@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FieldTrip2</string>
+    <string name="title">Field Collection Application</string>
+    <string name="instructions">Please type in a name for your field trip</string>
+    <string name="trip_name">Enter a name</string>
+    <string name="btn_start">Start field trip</string>
+    <string name="btn_end">End field trip</string>
+    <string name="btn_camera">Take picture</string>
+    <string name="btn_upload">Upload trip</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

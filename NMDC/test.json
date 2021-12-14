@@ -1,0 +1,104 @@
+{
+	"biosample_set": [{
+		"id": "BioScales:BESC-307-Co2_62_14_SC",
+		"location": "BESC-307-Co2_62_14",
+		"lat_lon": {
+			"has_raw_value": "44.58753928 -123.19368899999999",
+			"latitude": 44.58753928,
+			"longitude": -123.19368899999999
+		},
+		"misc_param": {
+			"has_raw_value": "465",
+			"has_numeric_value": 465,
+			"type": "lbc"
+		},
+		"misc_param": {
+			"has_raw_value": "1348.5",
+			"has_numeric_value": 1348.5,
+			"type": "lb_ceq"
+		},
+		"ph": {
+			"has_raw_value": "6.18",
+			"has_numeric_value": 6.18,
+			"type": "ph"
+		},
+		"calcium": {
+			"has_raw_value": "1629.0296",
+			"has_numeric_value": 1629.0296,
+			"type": "ca"
+		},
+		"potassium": {
+			"has_raw_value": "183.4217",
+			"has_numeric_value": 183.4217,
+			"type": "k"
+		},
+		"magnesium": {
+			"has_raw_value": "363.0291",
+			"has_numeric_value": 363.0291,
+			"type": "mg"
+		},
+		"misc_param": {
+			"has_raw_value": "32.4044",
+			"has_numeric_value": 32.4044,
+			"type": "mn"
+		},
+		"misc_param": {
+			"has_raw_value": "111.0062",
+			"has_numeric_value": 111.0062,
+			"type": "p"
+		},
+		"misc_param": {
+			"has_raw_value": "2.7511",
+			"has_numeric_value": 2.7511,
+			"type": "zn"
+		},
+		"misc_param": {
+			"has_raw_value": "6.6568068",
+			"has_numeric_value": 6.6568068,
+			"type": "ammonium"
+		},
+		"misc_param": {
+			"has_raw_value": "0",
+			"has_numeric_value": 0,
+			"type": "no2"
+		},
+		"misc_param": {
+			"has_raw_value": "1.5271769999999998",
+			"has_numeric_value": 1.5271769999999998,
+			"type": "no3"
+		},
+		"tot_org_carb": {
+			"has_raw_value": "1.348",
+			"has_numeric_value": 1.348,
+			"type": "c"
+		},
+		"tot_nitro_content": {
+			"has_raw_value": "0.254",
+			"has_numeric_value": 0.254,
+			"type": "n"
+		},
+		"water_content": {
+			"has_raw_value": "4.587419331143175",
+			"has_numeric_value": 4.587419331143175,
+			"type": "soil_moisture"
+		},
+		"collection_date": {
+			"has_raw_value": "09-2020-04T11:30:00",
+			"type": "collection_date"
+		},
+		"geo_loc_name": {
+			"has_raw_value": "Corvallis",
+			"type": "site"
+		},
+		"misc_param": {
+			"has_raw_value": "3.23",
+			"has_numeric_value": 3.23,
+			"type": "total_tree_height"
+		},
+		"misc_param": {
+			"has_raw_value": "1.5",
+			"has_numeric_value": 1.5,
+			"type": "dbh"
+		}
+	}]
+}

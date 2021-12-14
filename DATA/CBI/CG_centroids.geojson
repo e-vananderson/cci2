@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "CG_centroids",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Boardman_OR_2016", "marker-color": "RED"}, "geometry": { "type": "Point", "coordinates": [ -119.561634200950849, 45.833492788669197 ] } },
+{ "type": "Feature", "properties": { "Name": "Sedona", "marker-color": "RED"}, "geometry": { "type": "Point", "coordinates": [ -111.928597299647009, 34.910944496291066 ] } },
+{ "type": "Feature", "properties": { "Name": "Corvallis, OR 2009", "marker-color": "RED"}, "geometry": { "type": "Point", "coordinates": [ -123.193302342653624, 44.587937278243743 ] } },
+{ "type": "Feature", "properties": { "Name": "Placerville_CA_2009", "marker-color": "RED"}, "geometry": { "type": "Point", "coordinates": [ -120.737824146266604, 38.754451441827221 ] } },
+{ "type": "Feature", "properties": { "Name": "Clatskanie_OR_2009", "marker-color": "RED"}, "geometry": { "type": "Point", "coordinates": [ -123.270223265389149, 46.121176187038458 ] } }
+]
+}

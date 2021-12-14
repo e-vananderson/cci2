@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png",
+        "source": "C:\\Users\\evana\\.gradle\\caches\\transforms-2\\files-2.1\\6eebd247005afbb0f481995ad149addc\\support-compat-28.0.0\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png",
+        "source": "C:\\Users\\evana\\.gradle\\caches\\transforms-2\\files-2.1\\6eebd247005afbb0f481995ad149addc\\support-compat-28.0.0\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_folder.png",
+        "source": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\src\\main\\res\\drawable-hdpi\\ic_folder.png"
+    },
+    {
+        "merged": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_file.png",
+        "source": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\src\\main\\res\\drawable-hdpi\\ic_file.png"
+    },
+    {
+        "merged": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\notification_bg_low_normal.9.png",
+        "source": "C:\\Users\\evana\\.gradle\\caches\\transforms-2\\files-2.1\\6eebd247005afbb0f481995ad149addc\\support-compat-28.0.0\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\notification_bg_normal.9.png",
+        "source": "C:\\Users\\evana\\.gradle\\caches\\transforms-2\\files-2.1\\6eebd247005afbb0f481995ad149addc\\support-compat-28.0.0\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png",
+        "source": "C:\\Users\\evana\\.gradle\\caches\\transforms-2\\files-2.1\\6eebd247005afbb0f481995ad149addc\\support-compat-28.0.0\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ic_provider.png",
+        "source": "D:\\Evan\\Documents\\ornl\\FieldTrip2\\aFileChooser\\src\\main\\res\\drawable-hdpi\\ic_provider.png"
+    }
+]

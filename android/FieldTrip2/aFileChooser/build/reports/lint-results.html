@@ -1,0 +1,1597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lint Report</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-indigo.min.css" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+<script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+<style>
+section.section--center {
+    max-width: 860px;
+}
+.mdl-card__supporting-text + .mdl-card__actions {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+main > .mdl-layout__tab-panel {
+  padding: 8px;
+  padding-top: 48px;
+}
+
+.mdl-card__actions {
+    margin: 0;
+    padding: 4px 40px;
+    color: inherit;
+}
+.mdl-card > * {
+    height: auto;
+}
+.mdl-card__actions a {
+    color: #00BCD4;
+    margin: 0;
+}
+.error-icon {
+    color: #bb7777;
+    vertical-align: bottom;
+}
+.warning-icon {
+    vertical-align: bottom;
+}
+.mdl-layout__content section:not(:last-of-type) {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.mdl-card .mdl-card__supporting-text {
+  margin: 40px;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0;
+  color: inherit;
+  width: calc(100% - 80px);
+}
+div.mdl-layout__drawer-button .material-icons {
+    line-height: 48px;
+}
+.mdl-card .mdl-card__supporting-text {
+    margin-top: 0px;
+}
+.chips {
+    float: right;
+    vertical-align: middle;
+}
+
+pre.errorlines {
+    background-color: white;
+    font-family: monospace;
+    border: 1px solid #e0e0e0;
+    line-height: 0.9rem;
+    font-size: 0.9rem;    padding: 1px 0px 1px; 1px;
+    overflow: scroll;
+}
+.prefix {
+    color: #660e7a;
+    font-weight: bold;
+}
+.attribute {
+    color: #0000ff;
+    font-weight: bold;
+}
+.value {
+    color: #008000;
+    font-weight: bold;
+}
+.tag {
+    color: #000080;
+    font-weight: bold;
+}
+.comment {
+    color: #808080;
+    font-style: italic;
+}
+.javadoc {
+    color: #808080;
+    font-style: italic;
+}
+.annotation {
+    color: #808000;
+}
+.string {
+    color: #008000;
+    font-weight: bold;
+}
+.number {
+    color: #0000ff;
+}
+.keyword {
+    color: #000080;
+    font-weight: bold;
+}
+.caretline {
+    background-color: #fffae3;
+}
+.lineno {
+    color: #999999;
+    background-color: #f0f0f0;
+}
+.error {
+    display: inline-block;
+    position:relative;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AwCFR4T/3uLMgAAADxJREFUCNdNyLERQEAABMCjL4lQwIzcjErpguAL+C9AvgKJDbeD/PRpLdm35Hm+MU+cB+tCKaJW4L4YBy+CAiLJrFs9mgAAAABJRU5ErkJggg==) bottom repeat-x;
+}
+.warning {
+    text-decoration: none;
+    background-color: #f6ebbc;
+}
+.overview {
+    padding: 10pt;
+    width: 100%;
+    overflow: auto;
+    border-collapse:collapse;
+}
+.overview tr {
+    border-bottom: solid 1px #eeeeee;
+}
+.categoryColumn a {
+     text-decoration: none;
+     color: inherit;
+}
+.countColumn {
+    text-align: right;
+    padding-right: 20px;
+    width: 50px;
+}
+.issueColumn {
+   padding-left: 16px;
+}
+.categoryColumn {
+   position: relative;
+   left: -50px;
+   padding-top: 20px;
+   padding-bottom: 5px;
+}
+</style>
+<script language="javascript" type="text/javascript">
+<!--
+function reveal(id) {
+if (document.getElementById) {
+document.getElementById(id).style.display = 'block';
+document.getElementById(id+'Link').style.display = 'none';
+}
+}
+function hideid(id) {
+if (document.getElementById) {
+document.getElementById(id).style.display = 'none';
+}
+}
+//-->
+</script>
+</head>
+<body class="mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Lint Report: 22 errors and 33 warnings</span>
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+Check performed at Tue Jun 15 10:39:26 CDT 2021      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Issue Types</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
+      <a class="mdl-navigation__link" href="#DefaultLocale"><i class="material-icons warning-icon">warning</i>Implied default locale in case conversion (2)</a>
+      <a class="mdl-navigation__link" href="#InlinedApi"><i class="material-icons warning-icon">warning</i>Using inlined constants on older versions (30)</a>
+      <a class="mdl-navigation__link" href="#NewApi"><i class="material-icons error-icon">error</i>Calling new methods on older versions (20)</a>
+      <a class="mdl-navigation__link" href="#MissingTranslation"><i class="material-icons error-icon">error</i>Incomplete translation (1)</a>
+      <a class="mdl-navigation__link" href="#ExpiredTargetSdkVersion"><i class="material-icons error-icon">error</i>TargetSdkVersion No Longer Supported (1)</a>
+      <a class="mdl-navigation__link" href="#IconDipSize"><i class="material-icons warning-icon">warning</i>Icon density-independent size validation (1)</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="mdl-layout__tab-panel is-active">
+<a name="overview"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="OverviewCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Overview</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<table class="overview">
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
+</td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#DefaultLocale">DefaultLocale</a>: Implied default locale in case conversion</td></tr>
+<tr>
+<td class="countColumn">30</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#InlinedApi">InlinedApi</a>: Using inlined constants on older versions</td></tr>
+<tr>
+<td class="countColumn">20</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
+<a href="#NewApi">NewApi</a>: Calling new methods on older versions</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness:Messages">Correctness:Messages</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
+<a href="#MissingTranslation">MissingTranslation</a>: Incomplete translation</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Compliance">Compliance</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
+<a href="#ExpiredTargetSdkVersion">ExpiredTargetSdkVersion</a>: TargetSdkVersion No Longer Supported</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#IconDipSize">IconDipSize</a>: Icon density-independent size validation</td></tr>
+<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (38)</a>
+</td></tr></table>
+<br/>              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OverviewCardLink" onclick="hideid('OverviewCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Correctness"></a>
+<a name="DefaultLocale"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="DefaultLocaleCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Implied default locale in case conversion</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java">../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java</a>:480</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 477 </span>        <span class="annotation">@Override</span>
+<span class="lineno"> 478 </span>        <span class="keyword">public</span> <span class="keyword">int</span> compare(File f1, File f2) {
+<span class="lineno"> 479 </span>            <span class="comment">// Sort alphabetically by lower case, which is much cleaner</span>
+<span class="caretline"><span class="lineno"> 480 </span>            <span class="keyword">return</span> f1.getName().<span class="warning">toLowerCase</span>().compareTo(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 481 </span>                    f2.getName().toLowerCase());
+<span class="lineno"> 482 </span>        }
+<span class="lineno"> 483 </span>    };
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java">../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java</a>:481</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toLowerCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 478 </span>        <span class="keyword">public</span> <span class="keyword">int</span> compare(File f1, File f2) {
+<span class="lineno"> 479 </span>            <span class="comment">// Sort alphabetically by lower case, which is much cleaner</span>
+<span class="lineno"> 480 </span>            <span class="keyword">return</span> f1.getName().toLowerCase().compareTo(
+<span class="caretline"><span class="lineno"> 481 </span>                    f2.getName().<span class="warning">toLowerCase</span>());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 482 </span>        }
+<span class="lineno"> 483 </span>    };
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationDefaultLocale" style="display: none;">
+Calling <code>String#toLowerCase()</code> or <code>#toUpperCase()</code> <b>without specifying an explicit locale</b> is a common source of bugs. The reason for that is that those methods will use the current locale on the user's device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for <code>i</code> is <b>not</b> <code>I</code>.<br/>
+<br/>
+If you want the methods to just perform ASCII replacement, for example to convert an enum name, call <code>String#toUpperCase(Locale.US)</code> instead. If you really want to use the current locale, call <code>String#toUpperCase(Locale.getDefault())</code> instead.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/reference/java/util/Locale.html#default_locale">https://developer.android.com/reference/java/util/Locale.html#default_locale</a>
+</div>To suppress this error, use the issue id "DefaultLocale" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">DefaultLocale</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationDefaultLocaleLink" onclick="reveal('explanationDefaultLocale');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="DefaultLocaleCardLink" onclick="hideid('DefaultLocaleCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="InlinedApi"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="InlinedApiCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Using inlined constants on older versions</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:34</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_ROOT_ID</code></span><br /><pre class="errorlines">
+<span class="lineno">  31 </span><span class="javadoc">     * Default root projection: everything but Root.COLUMN_MIME_TYPES
+</span><span class="lineno">  32 </span><span class="javadoc">     */</span>
+<span class="lineno">  33 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_ROOT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="caretline"><span class="lineno">  34 </span>            <span class="warning">Root.COLUMN_ROOT_ID</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>            Root.COLUMN_FLAGS, Root.COLUMN_TITLE, Root.COLUMN_DOCUMENT_ID, Root.COLUMN_ICON,
+<span class="lineno">  36 </span>            Root.COLUMN_AVAILABLE_BYTES
+<span class="lineno">  37 </span>    };
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:35</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_DOCUMENT_ID</code></span><br /><pre class="errorlines">
+<span class="lineno">  32 </span><span class="javadoc">     */</span>
+<span class="lineno">  33 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_ROOT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="lineno">  34 </span>            Root.COLUMN_ROOT_ID,
+<span class="caretline"><span class="lineno">  35 </span>            Root.COLUMN_FLAGS, Root.COLUMN_TITLE, <span class="warning">Root.COLUMN_DOCUMENT_ID</span>, Root.COLUMN_ICON,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  36 </span>            Root.COLUMN_AVAILABLE_BYTES
+<span class="lineno">  37 </span>    };
+<span class="lineno">  38 </span>    <span class="javadoc">/**
+</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:35</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_FLAGS</code></span><br /><pre class="errorlines">
+<span class="lineno">  32 </span><span class="javadoc">     */</span>
+<span class="lineno">  33 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_ROOT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="lineno">  34 </span>            Root.COLUMN_ROOT_ID,
+<span class="caretline"><span class="lineno">  35 </span>            <span class="warning">Root.COLUMN_FLAGS</span>, Root.COLUMN_TITLE, Root.COLUMN_DOCUMENT_ID, Root.COLUMN_ICON,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  36 </span>            Root.COLUMN_AVAILABLE_BYTES
+<span class="lineno">  37 </span>    };
+<span class="lineno">  38 </span>    <span class="javadoc">/**
+</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:35</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_ICON</code></span><br /><pre class="errorlines">
+<span class="lineno">  32 </span><span class="javadoc">     */</span>
+<span class="lineno">  33 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_ROOT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="lineno">  34 </span>            Root.COLUMN_ROOT_ID,
+<span class="caretline"><span class="lineno">  35 </span>            Root.COLUMN_FLAGS, Root.COLUMN_TITLE, Root.COLUMN_DOCUMENT_ID, <span class="warning">Root.COLUMN_ICON</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  36 </span>            Root.COLUMN_AVAILABLE_BYTES
+<span class="lineno">  37 </span>    };
+<span class="lineno">  38 </span>    <span class="javadoc">/**
+</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:35</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_TITLE</code></span><br /><pre class="errorlines">
+<span class="lineno">  32 </span><span class="javadoc">     */</span>
+<span class="lineno">  33 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_ROOT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="lineno">  34 </span>            Root.COLUMN_ROOT_ID,
+<span class="caretline"><span class="lineno">  35 </span>            Root.COLUMN_FLAGS, <span class="warning">Root.COLUMN_TITLE</span>, Root.COLUMN_DOCUMENT_ID, Root.COLUMN_ICON,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  36 </span>            Root.COLUMN_AVAILABLE_BYTES
+<span class="lineno">  37 </span>    };
+<span class="lineno">  38 </span>    <span class="javadoc">/**
+</span></pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="InlinedApiDivLink" onclick="reveal('InlinedApiDiv');" />+ 25 More Occurrences...</button>
+<div id="InlinedApiDiv" style="display: none">
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:36</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_AVAILABLE_BYTES</code></span><br /><pre class="errorlines">
+<span class="lineno">  33 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_ROOT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="lineno">  34 </span>            Root.COLUMN_ROOT_ID,
+<span class="lineno">  35 </span>            Root.COLUMN_FLAGS, Root.COLUMN_TITLE, Root.COLUMN_DOCUMENT_ID, Root.COLUMN_ICON,
+<span class="caretline"><span class="lineno">  36 </span>            <span class="warning">Root.COLUMN_AVAILABLE_BYTES</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  37 </span>    };
+<span class="lineno">  38 </span>    <span class="javadoc">/**
+</span><span class="lineno">  39 </span><span class="javadoc">     * Default document projection: everything but Document.COLUMN_ICON and
+</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:43</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_DOCUMENT_ID</code></span><br /><pre class="errorlines">
+<span class="lineno">  40 </span><span class="javadoc">     * Document.COLUMN_SUMMARY
+</span><span class="lineno">  41 </span><span class="javadoc">     */</span>
+<span class="lineno">  42 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_DOCUMENT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="caretline"><span class="lineno">  43 </span>            <span class="warning">Document.COLUMN_DOCUMENT_ID</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  44 </span>            Document.COLUMN_DISPLAY_NAME, Document.COLUMN_FLAGS, Document.COLUMN_MIME_TYPE,
+<span class="lineno">  45 </span>            Document.COLUMN_SIZE,
+<span class="lineno">  46 </span>            Document.COLUMN_LAST_MODIFIED
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:44</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_DISPLAY_NAME</code></span><br /><pre class="errorlines">
+<span class="lineno">  41 </span><span class="javadoc">     */</span>
+<span class="lineno">  42 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_DOCUMENT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="lineno">  43 </span>            Document.COLUMN_DOCUMENT_ID,
+<span class="caretline"><span class="lineno">  44 </span>            <span class="warning">Document.COLUMN_DISPLAY_NAME</span>, Document.COLUMN_FLAGS, Document.COLUMN_MIME_TYPE,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  45 </span>            Document.COLUMN_SIZE,
+<span class="lineno">  46 </span>            Document.COLUMN_LAST_MODIFIED
+<span class="lineno">  47 </span>    };
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:44</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_FLAGS</code></span><br /><pre class="errorlines">
+<span class="lineno">  41 </span><span class="javadoc">     */</span>
+<span class="lineno">  42 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_DOCUMENT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="lineno">  43 </span>            Document.COLUMN_DOCUMENT_ID,
+<span class="caretline"><span class="lineno">  44 </span>            Document.COLUMN_DISPLAY_NAME, <span class="warning">Document.COLUMN_FLAGS</span>, Document.COLUMN_MIME_TYPE,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  45 </span>            Document.COLUMN_SIZE,
+<span class="lineno">  46 </span>            Document.COLUMN_LAST_MODIFIED
+<span class="lineno">  47 </span>    };
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:44</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_MIME_TYPE</code></span><br /><pre class="errorlines">
+<span class="lineno">  41 </span><span class="javadoc">     */</span>
+<span class="lineno">  42 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_DOCUMENT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="lineno">  43 </span>            Document.COLUMN_DOCUMENT_ID,
+<span class="caretline"><span class="lineno">  44 </span>            Document.COLUMN_DISPLAY_NAME, Document.COLUMN_FLAGS, <span class="warning">Document.COLUMN_MIME_TYPE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  45 </span>            Document.COLUMN_SIZE,
+<span class="lineno">  46 </span>            Document.COLUMN_LAST_MODIFIED
+<span class="lineno">  47 </span>    };
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:45</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_SIZE</code></span><br /><pre class="errorlines">
+<span class="lineno">  42 </span>    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String[] DEFAULT_DOCUMENT_PROJECTION = <span class="keyword">new</span> String[] {
+<span class="lineno">  43 </span>            Document.COLUMN_DOCUMENT_ID,
+<span class="lineno">  44 </span>            Document.COLUMN_DISPLAY_NAME, Document.COLUMN_FLAGS, Document.COLUMN_MIME_TYPE,
+<span class="caretline"><span class="lineno">  45 </span>            <span class="warning">Document.COLUMN_SIZE</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  46 </span>            Document.COLUMN_LAST_MODIFIED
+<span class="lineno">  47 </span>    };
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:46</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_LAST_MODIFIED</code></span><br /><pre class="errorlines">
+<span class="lineno">  43 </span>            Document.COLUMN_DOCUMENT_ID,
+<span class="lineno">  44 </span>            Document.COLUMN_DISPLAY_NAME, Document.COLUMN_FLAGS, Document.COLUMN_MIME_TYPE,
+<span class="lineno">  45 </span>            Document.COLUMN_SIZE,
+<span class="caretline"><span class="lineno">  46 </span>            <span class="warning">Document.COLUMN_LAST_MODIFIED</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  47 </span>    };
+<span class="lineno">  48 </span>
+<span class="lineno">  49 </span>    <span class="annotation">@Override</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:59</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_ROOT_ID</code></span><br /><pre class="errorlines">
+<span class="lineno">  56 </span>        File homeDir = Environment.getExternalStorageDirectory();
+<span class="lineno">  57 </span>        <span class="keyword">final</span> MatrixCursor.RowBuilder row = result.newRow();
+<span class="lineno">  58 </span>        <span class="comment">// These columns are required</span>
+<span class="caretline"><span class="lineno">  59 </span>        row.add(<span class="warning">Root.COLUMN_ROOT_ID</span>, homeDir.getAbsolutePath());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  60 </span>        row.add(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  61 </span>        row.add(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:60</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_DOCUMENT_ID</code></span><br /><pre class="errorlines">
+<span class="lineno">  57 </span>        <span class="keyword">final</span> MatrixCursor.RowBuilder row = result.newRow();
+<span class="lineno">  58 </span>        <span class="comment">// These columns are required</span>
+<span class="lineno">  59 </span>        row.add(Root.COLUMN_ROOT_ID, homeDir.getAbsolutePath());
+<span class="caretline"><span class="lineno">  60 </span>        row.add(<span class="warning">Root.COLUMN_DOCUMENT_ID</span>, homeDir.getAbsolutePath());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  61 </span>        row.add(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:61</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_TITLE</code></span><br /><pre class="errorlines">
+<span class="lineno">  58 </span>        <span class="comment">// These columns are required</span>
+<span class="lineno">  59 </span>        row.add(Root.COLUMN_ROOT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  60 </span>        row.add(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());
+<span class="caretline"><span class="lineno">  61 </span>        row.add(<span class="warning">Root.COLUMN_TITLE</span>, getContext().getString(R.string.internal_storage));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:62</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_FLAGS</code></span><br /><pre class="errorlines">
+<span class="lineno">  59 </span>        row.add(Root.COLUMN_ROOT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  60 </span>        row.add(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  61 </span>        row.add(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));
+<span class="caretline"><span class="lineno">  62 </span>        row.add(<span class="warning">Root.COLUMN_FLAGS</span>, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span>
+<span class="lineno">  65 </span>        row.add(Root.COLUMN_AVAILABLE_BYTES, homeDir.getFreeSpace());
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:62</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#FLAG_LOCAL_ONLY</code></span><br /><pre class="errorlines">
+<span class="lineno">  59 </span>        row.add(Root.COLUMN_ROOT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  60 </span>        row.add(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  61 </span>        row.add(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));
+<span class="caretline"><span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, <span class="warning">Root.FLAG_LOCAL_ONLY</span> | Root.FLAG_SUPPORTS_CREATE);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span>
+<span class="lineno">  65 </span>        row.add(Root.COLUMN_AVAILABLE_BYTES, homeDir.getFreeSpace());
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:62</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#FLAG_SUPPORTS_CREATE</code></span><br /><pre class="errorlines">
+<span class="lineno">  59 </span>        row.add(Root.COLUMN_ROOT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  60 </span>        row.add(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  61 </span>        row.add(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));
+<span class="caretline"><span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | <span class="warning">Root.FLAG_SUPPORTS_CREATE</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span>
+<span class="lineno">  65 </span>        row.add(Root.COLUMN_AVAILABLE_BYTES, homeDir.getFreeSpace());
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:63</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_ICON</code></span><br /><pre class="errorlines">
+<span class="lineno">  60 </span>        row.add(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  61 </span>        row.add(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+<span class="caretline"><span class="lineno">  63 </span>        row.add(<span class="warning">Root.COLUMN_ICON</span>, R.drawable.ic_provider);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span>
+<span class="lineno">  65 </span>        row.add(Root.COLUMN_AVAILABLE_BYTES, homeDir.getFreeSpace());
+<span class="lineno">  66 </span>        <span class="comment">// Root.COLUMN_MIME_TYPE is another optional column and useful if you</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:65</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Root#COLUMN_AVAILABLE_BYTES</code></span><br /><pre class="errorlines">
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span>
+<span class="caretline"><span class="lineno">  65 </span>        row.add(<span class="warning">Root.COLUMN_AVAILABLE_BYTES</span>, homeDir.getFreeSpace());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  66 </span>        <span class="comment">// Root.COLUMN_MIME_TYPE is another optional column and useful if you</span>
+<span class="lineno">  67 </span>        <span class="comment">// have multiple roots with different</span>
+<span class="lineno">  68 </span>        <span class="comment">// types of mime types (roots that don't match the requested mime type</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:172</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_DOCUMENT_ID</code></span><br /><pre class="errorlines">
+<span class="lineno"> 169 </span>            <span class="keyword">throws</span> FileNotFoundException {
+<span class="lineno"> 170 </span>        <span class="keyword">final</span> MatrixCursor.RowBuilder row = result.newRow();
+<span class="lineno"> 171 </span>        <span class="comment">// These columns are required</span>
+<span class="caretline"><span class="lineno"> 172 </span>        row.add(<span class="warning">Document.COLUMN_DOCUMENT_ID</span>, file.getAbsolutePath());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 173 </span>        row.add(Document.COLUMN_DISPLAY_NAME, file.getName());
+<span class="lineno"> 174 </span>        String mimeType = getDocumentType(file.getAbsolutePath());
+<span class="lineno"> 175 </span>        row.add(Document.COLUMN_MIME_TYPE, mimeType);
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:173</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_DISPLAY_NAME</code></span><br /><pre class="errorlines">
+<span class="lineno"> 170 </span>  <span class="keyword">final</span> MatrixCursor.RowBuilder row = result.newRow();
+<span class="lineno"> 171 </span>  <span class="comment">// These columns are required</span>
+<span class="lineno"> 172 </span>  row.add(Document.COLUMN_DOCUMENT_ID, file.getAbsolutePath());
+<span class="caretline"><span class="lineno"> 173 </span>  row.add(<span class="warning">Document.COLUMN_DISPLAY_NAME</span>, file.getName());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 174 </span>  String mimeType = getDocumentType(file.getAbsolutePath());
+<span class="lineno"> 175 </span>  row.add(Document.COLUMN_MIME_TYPE, mimeType);
+<span class="lineno"> 176 </span>  <span class="keyword">int</span> flags = file.canWrite() ? Document.FLAG_SUPPORTS_DELETE | Document.FLAG_SUPPORTS_WRITE
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:175</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_MIME_TYPE</code></span><br /><pre class="errorlines">
+<span class="lineno"> 172 </span>  row.add(Document.COLUMN_DOCUMENT_ID, file.getAbsolutePath());
+<span class="lineno"> 173 </span>  row.add(Document.COLUMN_DISPLAY_NAME, file.getName());
+<span class="lineno"> 174 </span>  String mimeType = getDocumentType(file.getAbsolutePath());
+<span class="caretline"><span class="lineno"> 175 </span>  row.add(<span class="warning">Document.COLUMN_MIME_TYPE</span>, mimeType);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 176 </span>  <span class="keyword">int</span> flags = file.canWrite() ? Document.FLAG_SUPPORTS_DELETE | Document.FLAG_SUPPORTS_WRITE
+<span class="lineno"> 177 </span>          : <span class="number">0</span>;
+<span class="lineno"> 178 </span>  <span class="comment">// We only show thumbnails for image files - expect a call to</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:176</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#FLAG_SUPPORTS_DELETE</code></span><br /><pre class="errorlines">
+<span class="lineno"> 173 </span>  row.add(Document.COLUMN_DISPLAY_NAME, file.getName());
+<span class="lineno"> 174 </span>  String mimeType = getDocumentType(file.getAbsolutePath());
+<span class="lineno"> 175 </span>  row.add(Document.COLUMN_MIME_TYPE, mimeType);
+<span class="caretline"><span class="lineno"> 176 </span>  <span class="keyword">int</span> flags = file.canWrite() ? <span class="warning">Document.FLAG_SUPPORTS_DELETE</span> | Document.FLAG_SUPPORTS_WRITE&nbsp;&nbsp;</span>
+<span class="lineno"> 177 </span>          : <span class="number">0</span>;
+<span class="lineno"> 178 </span>  <span class="comment">// We only show thumbnails for image files - expect a call to</span>
+<span class="lineno"> 179 </span>  <span class="comment">// openDocumentThumbnail for each file that has</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:176</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#FLAG_SUPPORTS_WRITE</code></span><br /><pre class="errorlines">
+<span class="lineno"> 173 </span>  row.add(Document.COLUMN_DISPLAY_NAME, file.getName());
+<span class="lineno"> 174 </span>  String mimeType = getDocumentType(file.getAbsolutePath());
+<span class="lineno"> 175 </span>  row.add(Document.COLUMN_MIME_TYPE, mimeType);
+<span class="caretline"><span class="lineno"> 176 </span>  <span class="keyword">int</span> flags = file.canWrite() ? Document.FLAG_SUPPORTS_DELETE | <span class="warning">Document.FLAG_SUPPORTS_WRITE</span>&nbsp;&nbsp;</span>
+<span class="lineno"> 177 </span>          : <span class="number">0</span>;
+<span class="lineno"> 178 </span>  <span class="comment">// We only show thumbnails for image files - expect a call to</span>
+<span class="lineno"> 179 </span>  <span class="comment">// openDocumentThumbnail for each file that has</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:182</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#FLAG_SUPPORTS_THUMBNAIL</code></span><br /><pre class="errorlines">
+<span class="lineno"> 179 </span>        <span class="comment">// openDocumentThumbnail for each file that has</span>
+<span class="lineno"> 180 </span>        <span class="comment">// this flag set</span>
+<span class="lineno"> 181 </span>        <span class="keyword">if</span> (mimeType.startsWith(<span class="string">"image/"</span>))
+<span class="caretline"><span class="lineno"> 182 </span>            flags |= <span class="warning">Document.FLAG_SUPPORTS_THUMBNAIL</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 183 </span>        row.add(Document.COLUMN_FLAGS, flags);
+<span class="lineno"> 184 </span>        <span class="comment">// COLUMN_SIZE is required, but can be null</span>
+<span class="lineno"> 185 </span>        row.add(Document.COLUMN_SIZE, file.length());
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:183</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_FLAGS</code></span><br /><pre class="errorlines">
+<span class="lineno"> 180 </span>        <span class="comment">// this flag set</span>
+<span class="lineno"> 181 </span>        <span class="keyword">if</span> (mimeType.startsWith(<span class="string">"image/"</span>))
+<span class="lineno"> 182 </span>            flags |= Document.FLAG_SUPPORTS_THUMBNAIL;
+<span class="caretline"><span class="lineno"> 183 </span>        row.add(<span class="warning">Document.COLUMN_FLAGS</span>, flags);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 184 </span>        <span class="comment">// COLUMN_SIZE is required, but can be null</span>
+<span class="lineno"> 185 </span>        row.add(Document.COLUMN_SIZE, file.length());
+<span class="lineno"> 186 </span>        <span class="comment">// These columns are optional</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:185</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_SIZE</code></span><br /><pre class="errorlines">
+<span class="lineno"> 182 </span>            flags |= Document.FLAG_SUPPORTS_THUMBNAIL;
+<span class="lineno"> 183 </span>        row.add(Document.COLUMN_FLAGS, flags);
+<span class="lineno"> 184 </span>        <span class="comment">// COLUMN_SIZE is required, but can be null</span>
+<span class="caretline"><span class="lineno"> 185 </span>        row.add(<span class="warning">Document.COLUMN_SIZE</span>, file.length());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 186 </span>        <span class="comment">// These columns are optional</span>
+<span class="lineno"> 187 </span>        row.add(Document.COLUMN_LAST_MODIFIED, file.lastModified());
+<span class="lineno"> 188 </span>        <span class="comment">// Document.COLUMN_ICON can be a resource id identifying a custom icon.</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:187</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#COLUMN_LAST_MODIFIED</code></span><br /><pre class="errorlines">
+<span class="lineno"> 184 </span>        <span class="comment">// COLUMN_SIZE is required, but can be null</span>
+<span class="lineno"> 185 </span>        row.add(Document.COLUMN_SIZE, file.length());
+<span class="lineno"> 186 </span>        <span class="comment">// These columns are optional</span>
+<span class="caretline"><span class="lineno"> 187 </span>        row.add(<span class="warning">Document.COLUMN_LAST_MODIFIED</span>, file.lastModified());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 188 </span>        <span class="comment">// Document.COLUMN_ICON can be a resource id identifying a custom icon.</span>
+<span class="lineno"> 189 </span>        <span class="comment">// The system provides default icons</span>
+<span class="lineno"> 190 </span>        <span class="comment">// based on mime type</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:199</span>: <span class="message">Field requires API level 19 (current min is 7): <code>android.provider.DocumentsContract.Document#MIME_TYPE_DIR</code></span><br /><pre class="errorlines">
+<span class="lineno"> 196 </span>    <span class="keyword">public</span> String getDocumentType(<span class="keyword">final</span> String documentId) <span class="keyword">throws</span> FileNotFoundException {
+<span class="lineno"> 197 </span>        File file = <span class="keyword">new</span> File(documentId);
+<span class="lineno"> 198 </span>        <span class="keyword">if</span> (file.isDirectory())
+<span class="caretline"><span class="lineno"> 199 </span>            <span class="keyword">return</span> <span class="warning">Document.MIME_TYPE_DIR</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 200 </span>        <span class="comment">// From FileProvider.getType(Uri)</span>
+<span class="lineno"> 201 </span>        <span class="keyword">final</span> <span class="keyword">int</span> lastDot = file.getName().lastIndexOf(<span class="string">'.'</span>);
+<span class="lineno"> 202 </span>        <span class="keyword">if</span> (lastDot >= <span class="number">0</span>) {
+</pre>
+
+</div>
+</div>
+<div class="metadata"><div class="explanation" id="explanationInlinedApi" style="display: none;">
+This check scans through all the Android API field references in the application and flags certain constants, such as static final integers and Strings, which were introduced in later versions. These will actually be copied into the class files rather than being referenced, which means that the value is available even when running on older devices. In some cases that's fine, and in other cases it can result in a runtime crash or incorrect behavior. It depends on the context, so consider the code carefully and decide whether it's safe and can be suppressed or whether the code needs to be guarded.<br/>
+<br/>
+If you really want to use this API and don't need to support older devices just set the <code>minSdkVersion</code> in your <code>build.gradle</code> or <code>AndroidManifest.xml</code> files.<br/>
+<br/>
+If your code is <b>deliberately</b> accessing newer APIs, and you have ensured (e.g. with conditional execution) that this code will only ever be called on a supported platform, then you can annotate your class or method with the <code>@TargetApi</code> annotation specifying the local minimum SDK to apply, such as <code>@TargetApi(11)</code>, such that this check considers 11 rather than your manifest file's minimum SDK as the required API level.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "InlinedApi" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">InlinedApi</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationInlinedApiLink" onclick="reveal('explanationInlinedApi');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="InlinedApiCardLink" onclick="hideid('InlinedApiCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="NewApi"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="NewApiCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Calling new methods on older versions</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/ipaulpro/afilechooser/FileChooserActivity.java">../../src/main/java/com/ipaulpro/afilechooser/FileChooserActivity.java</a>:126</span>: <span class="message">Call requires API level 14 (current min is 7): <code>android.app.ActionBar#setHomeButtonEnabled</code></span><br /><pre class="errorlines">
+<span class="lineno"> 123 </span>
+<span class="lineno"> 124 </span>            ActionBar actionBar = getActionBar();
+<span class="lineno"> 125 </span>            actionBar.setDisplayHomeAsUpEnabled(hasBackStack);
+<span class="caretline"><span class="lineno"> 126 </span>            actionBar.<span class="error">setHomeButtonEnabled</span>(hasBackStack);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 127 </span>        }
+<span class="lineno"> 128 </span>
+<span class="lineno"> 129 </span>        <span class="keyword">return</span> <span class="keyword">true</span>;
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java">../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java</a>:273</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.provider.DocumentsContract#isDocumentUri</code></span><br /><pre class="errorlines">
+<span class="lineno"> 270 </span>        <span class="keyword">final</span> <span class="keyword">boolean</span> isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+<span class="lineno"> 271 </span>
+<span class="lineno"> 272 </span>        <span class="comment">// DocumentProvider</span>
+<span class="caretline"><span class="lineno"> 273 </span>        <span class="keyword">if</span> (isKitKat &amp;&amp; DocumentsContract.<span class="error">isDocumentUri</span>(context, uri)) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 274 </span>            <span class="comment">// LocalStorageProvider</span>
+<span class="lineno"> 275 </span>            <span class="keyword">if</span> (isLocalStorageDocument(uri)) {
+<span class="lineno"> 276 </span>                <span class="comment">// The path is the id</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java">../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java</a>:277</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.provider.DocumentsContract#getDocumentId</code></span><br /><pre class="errorlines">
+<span class="lineno"> 274 </span>            <span class="comment">// LocalStorageProvider</span>
+<span class="lineno"> 275 </span>            <span class="keyword">if</span> (isLocalStorageDocument(uri)) {
+<span class="lineno"> 276 </span>                <span class="comment">// The path is the id</span>
+<span class="caretline"><span class="lineno"> 277 </span>                <span class="keyword">return</span> DocumentsContract.<span class="error">getDocumentId</span>(uri);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 278 </span>            }
+<span class="lineno"> 279 </span>            <span class="comment">// ExternalStorageProvider</span>
+<span class="lineno"> 280 </span>            <span class="keyword">else</span> <span class="keyword">if</span> (isExternalStorageDocument(uri)) {
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java">../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java</a>:281</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.provider.DocumentsContract#getDocumentId</code></span><br /><pre class="errorlines">
+<span class="lineno"> 278 </span>            }
+<span class="lineno"> 279 </span>            <span class="comment">// ExternalStorageProvider</span>
+<span class="lineno"> 280 </span>            <span class="keyword">else</span> <span class="keyword">if</span> (isExternalStorageDocument(uri)) {
+<span class="caretline"><span class="lineno"> 281 </span>                <span class="keyword">final</span> String docId = DocumentsContract.<span class="error">getDocumentId</span>(uri);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 282 </span>                <span class="keyword">final</span> String[] split = docId.split(<span class="string">":"</span>);
+<span class="lineno"> 283 </span>                <span class="keyword">final</span> String type = split[<span class="number">0</span>];
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java">../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java</a>:294</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.provider.DocumentsContract#getDocumentId</code></span><br /><pre class="errorlines">
+<span class="lineno"> 291 </span>     <span class="comment">// DownloadsProvider</span>
+<span class="lineno"> 292 </span>     <span class="keyword">else</span> <span class="keyword">if</span> (isDownloadsDocument(uri)) {
+<span class="lineno"> 293 </span>
+<span class="caretline"><span class="lineno"> 294 </span>         <span class="keyword">final</span> String id = DocumentsContract.<span class="error">getDocumentId</span>(uri);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 295 </span>         <span class="keyword">final</span> Uri contentUri = ContentUris.withAppendedId(
+<span class="lineno"> 296 </span>                 Uri.parse(<span class="string">"content://downloads/public_downloads"</span>), Long.valueOf(id));
+</pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="NewApiDivLink" onclick="reveal('NewApiDiv');" />+ 15 More Occurrences...</button>
+<div id="NewApiDiv" style="display: none">
+<span class="location"><a href="../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java">../../src/main/java/com/ipaulpro/afilechooser/utils/FileUtils.java</a>:302</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.provider.DocumentsContract#getDocumentId</code></span><br /><pre class="errorlines">
+<span class="lineno"> 299 </span>            }
+<span class="lineno"> 300 </span>            <span class="comment">// MediaProvider</span>
+<span class="lineno"> 301 </span>            <span class="keyword">else</span> <span class="keyword">if</span> (isMediaDocument(uri)) {
+<span class="caretline"><span class="lineno"> 302 </span>                <span class="keyword">final</span> String docId = DocumentsContract.<span class="error">getDocumentId</span>(uri);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 303 </span>                <span class="keyword">final</span> String[] split = docId.split(<span class="string">":"</span>);
+<span class="lineno"> 304 </span>                <span class="keyword">final</span> String type = split[<span class="number">0</span>];
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:26</span>: <span class="message">Class requires API level 19 (current min is 7): <code>android.provider.DocumentsProvider</code></span><br /><pre class="errorlines">
+<span class="lineno">  23 </span><span class="keyword">import</span> java.io.FileOutputStream;
+<span class="lineno">  24 </span><span class="keyword">import</span> java.io.IOException;
+<span class="lineno">  25 </span>
+<span class="caretline"><span class="lineno">  26 </span><span class="keyword">public</span> <span class="keyword">class</span> LocalStorageProvider <span class="keyword">extends</span> <span class="error">DocumentsProvider</span> {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  27 </span>
+<span class="lineno">  28 </span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AUTHORITY = <span class="string">"com.ianhanniballake.localstorage.documents"</span>;
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:59</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno">  56 </span>        File homeDir = Environment.getExternalStorageDirectory();
+<span class="lineno">  57 </span>        <span class="keyword">final</span> MatrixCursor.RowBuilder row = result.newRow();
+<span class="lineno">  58 </span>        <span class="comment">// These columns are required</span>
+<span class="caretline"><span class="lineno">  59 </span>        row.<span class="error">add</span>(Root.COLUMN_ROOT_ID, homeDir.getAbsolutePath());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  60 </span>        row.add(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  61 </span>        row.add(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:60</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno">  57 </span>        <span class="keyword">final</span> MatrixCursor.RowBuilder row = result.newRow();
+<span class="lineno">  58 </span>        <span class="comment">// These columns are required</span>
+<span class="lineno">  59 </span>        row.add(Root.COLUMN_ROOT_ID, homeDir.getAbsolutePath());
+<span class="caretline"><span class="lineno">  60 </span>        row.<span class="error">add</span>(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  61 </span>        row.add(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:61</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno">  58 </span>        <span class="comment">// These columns are required</span>
+<span class="lineno">  59 </span>        row.add(Root.COLUMN_ROOT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  60 </span>        row.add(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());
+<span class="caretline"><span class="lineno">  61 </span>        row.<span class="error">add</span>(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:62</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno">  59 </span>        row.add(Root.COLUMN_ROOT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  60 </span>        row.add(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  61 </span>        row.add(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));
+<span class="caretline"><span class="lineno">  62 </span>        row.<span class="error">add</span>(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span>
+<span class="lineno">  65 </span>        row.add(Root.COLUMN_AVAILABLE_BYTES, homeDir.getFreeSpace());
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:63</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno">  60 </span>        row.add(Root.COLUMN_DOCUMENT_ID, homeDir.getAbsolutePath());
+<span class="lineno">  61 </span>        row.add(Root.COLUMN_TITLE, getContext().getString(R.string.internal_storage));
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+<span class="caretline"><span class="lineno">  63 </span>        row.<span class="error">add</span>(Root.COLUMN_ICON, R.drawable.ic_provider);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span>
+<span class="lineno">  65 </span>        row.add(Root.COLUMN_AVAILABLE_BYTES, homeDir.getFreeSpace());
+<span class="lineno">  66 </span>        <span class="comment">// Root.COLUMN_MIME_TYPE is another optional column and useful if you</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:65</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span>
+<span class="caretline"><span class="lineno">  65 </span>        row.<span class="error">add</span>(Root.COLUMN_AVAILABLE_BYTES, homeDir.getFreeSpace());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  66 </span>        <span class="comment">// Root.COLUMN_MIME_TYPE is another optional column and useful if you</span>
+<span class="lineno">  67 </span>        <span class="comment">// have multiple roots with different</span>
+<span class="lineno">  68 </span>        <span class="comment">// types of mime types (roots that don't match the requested mime type</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:65</span>: <span class="message">Call requires API level 9 (current min is 7): <code>java.io.File#getFreeSpace</code></span><br /><pre class="errorlines">
+<span class="lineno">  62 </span>        row.add(Root.COLUMN_FLAGS, Root.FLAG_LOCAL_ONLY | Root.FLAG_SUPPORTS_CREATE);
+<span class="lineno">  63 </span>        row.add(Root.COLUMN_ICON, R.drawable.ic_provider);
+<span class="lineno">  64 </span>        <span class="comment">// These columns are optional</span>
+<span class="caretline"><span class="lineno">  65 </span>        row.add(Root.COLUMN_AVAILABLE_BYTES, homeDir.<span class="error">getFreeSpace</span>());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  66 </span>        <span class="comment">// Root.COLUMN_MIME_TYPE is another optional column and useful if you</span>
+<span class="lineno">  67 </span>        <span class="comment">// have multiple roots with different</span>
+<span class="lineno">  68 </span>        <span class="comment">// types of mime types (roots that don't match the requested mime type</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:172</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno"> 169 </span>            <span class="keyword">throws</span> FileNotFoundException {
+<span class="lineno"> 170 </span>        <span class="keyword">final</span> MatrixCursor.RowBuilder row = result.newRow();
+<span class="lineno"> 171 </span>        <span class="comment">// These columns are required</span>
+<span class="caretline"><span class="lineno"> 172 </span>        row.<span class="error">add</span>(Document.COLUMN_DOCUMENT_ID, file.getAbsolutePath());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 173 </span>        row.add(Document.COLUMN_DISPLAY_NAME, file.getName());
+<span class="lineno"> 174 </span>        String mimeType = getDocumentType(file.getAbsolutePath());
+<span class="lineno"> 175 </span>        row.add(Document.COLUMN_MIME_TYPE, mimeType);
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:173</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno"> 170 </span>  <span class="keyword">final</span> MatrixCursor.RowBuilder row = result.newRow();
+<span class="lineno"> 171 </span>  <span class="comment">// These columns are required</span>
+<span class="lineno"> 172 </span>  row.add(Document.COLUMN_DOCUMENT_ID, file.getAbsolutePath());
+<span class="caretline"><span class="lineno"> 173 </span>  row.<span class="error">add</span>(Document.COLUMN_DISPLAY_NAME, file.getName());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 174 </span>  String mimeType = getDocumentType(file.getAbsolutePath());
+<span class="lineno"> 175 </span>  row.add(Document.COLUMN_MIME_TYPE, mimeType);
+<span class="lineno"> 176 </span>  <span class="keyword">int</span> flags = file.canWrite() ? Document.FLAG_SUPPORTS_DELETE | Document.FLAG_SUPPORTS_WRITE
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:175</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno"> 172 </span>  row.add(Document.COLUMN_DOCUMENT_ID, file.getAbsolutePath());
+<span class="lineno"> 173 </span>  row.add(Document.COLUMN_DISPLAY_NAME, file.getName());
+<span class="lineno"> 174 </span>  String mimeType = getDocumentType(file.getAbsolutePath());
+<span class="caretline"><span class="lineno"> 175 </span>  row.<span class="error">add</span>(Document.COLUMN_MIME_TYPE, mimeType);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 176 </span>  <span class="keyword">int</span> flags = file.canWrite() ? Document.FLAG_SUPPORTS_DELETE | Document.FLAG_SUPPORTS_WRITE
+<span class="lineno"> 177 </span>          : <span class="number">0</span>;
+<span class="lineno"> 178 </span>  <span class="comment">// We only show thumbnails for image files - expect a call to</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:183</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno"> 180 </span>        <span class="comment">// this flag set</span>
+<span class="lineno"> 181 </span>        <span class="keyword">if</span> (mimeType.startsWith(<span class="string">"image/"</span>))
+<span class="lineno"> 182 </span>            flags |= Document.FLAG_SUPPORTS_THUMBNAIL;
+<span class="caretline"><span class="lineno"> 183 </span>        row.<span class="error">add</span>(Document.COLUMN_FLAGS, flags);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 184 </span>        <span class="comment">// COLUMN_SIZE is required, but can be null</span>
+<span class="lineno"> 185 </span>        row.add(Document.COLUMN_SIZE, file.length());
+<span class="lineno"> 186 </span>        <span class="comment">// These columns are optional</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:185</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno"> 182 </span>            flags |= Document.FLAG_SUPPORTS_THUMBNAIL;
+<span class="lineno"> 183 </span>        row.add(Document.COLUMN_FLAGS, flags);
+<span class="lineno"> 184 </span>        <span class="comment">// COLUMN_SIZE is required, but can be null</span>
+<span class="caretline"><span class="lineno"> 185 </span>        row.<span class="error">add</span>(Document.COLUMN_SIZE, file.length());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 186 </span>        <span class="comment">// These columns are optional</span>
+<span class="lineno"> 187 </span>        row.add(Document.COLUMN_LAST_MODIFIED, file.lastModified());
+<span class="lineno"> 188 </span>        <span class="comment">// Document.COLUMN_ICON can be a resource id identifying a custom icon.</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java">../../src/main/java/com/ianhanniballake/localstorage/LocalStorageProvider.java</a>:187</span>: <span class="message">Call requires API level 19 (current min is 7): <code>android.database.MatrixCursor.RowBuilder#add</code></span><br /><pre class="errorlines">
+<span class="lineno"> 184 </span>        <span class="comment">// COLUMN_SIZE is required, but can be null</span>
+<span class="lineno"> 185 </span>        row.add(Document.COLUMN_SIZE, file.length());
+<span class="lineno"> 186 </span>        <span class="comment">// These columns are optional</span>
+<span class="caretline"><span class="lineno"> 187 </span>        row.<span class="error">add</span>(Document.COLUMN_LAST_MODIFIED, file.lastModified());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 188 </span>        <span class="comment">// Document.COLUMN_ICON can be a resource id identifying a custom icon.</span>
+<span class="lineno"> 189 </span>        <span class="comment">// The system provides default icons</span>
+<span class="lineno"> 190 </span>        <span class="comment">// based on mime type</span></pre>
+
+</div>
+</div>
+<div class="metadata"><div class="explanation" id="explanationNewApi" style="display: none;">
+This check scans through all the Android API calls in the application and warns about any calls that are not available on <b>all</b> versions targeted by this application (according to its minimum SDK attribute in the manifest).<br/>
+<br/>
+If you really want to use this API and don't need to support older devices just set the <code>minSdkVersion</code> in your <code>build.gradle</code> or <code>AndroidManifest.xml</code> files.<br/>
+<br/>
+If your code is <b>deliberately</b> accessing newer APIs, and you have ensured (e.g. with conditional execution) that this code will only ever be called on a supported platform, then you can annotate your class or method with the <code>@TargetApi</code> annotation specifying the local minimum SDK to apply, such as <code>@TargetApi(11)</code>, such that this check considers 11 rather than your manifest file's minimum SDK as the required API level.<br/>
+<br/>
+If you are deliberately setting <code>android:</code> attributes in style definitions, make sure you place this in a <code>values-v</code><i>NN</i> folder in order to avoid running into runtime conflicts on certain devices where manufacturers have added custom attributes whose ids conflict with the new ones on later platforms.<br/>
+<br/>
+Similarly, you can use tools:targetApi="11" in an XML file to indicate that the element will only be inflated in an adequate context.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "NewApi" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">NewApi</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Error</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationNewApiLink" onclick="reveal('explanationNewApi');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="NewApiCardLink" onclick="hideid('NewApiCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Correctness:Messages"></a>
+<a name="MissingTranslation"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="MissingTranslationCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Incomplete translation</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:21</span>: <span class="message">"internal_storage" is not translated in "de" (German), "ru" (Russian), "ko" (Korean), "pt" (Portuguese), "ga" (Irish), "it" (Italian), "fr" (French), "pl" (Polish), "ca" (Catalan), "es" (Spanish)</span><br /><pre class="errorlines">
+<span class="lineno"> 18 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"empty_directory"</span>>Empty Directory<span class="tag">&lt;/string></span>
+<span class="lineno"> 19 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"storage_removed"</span>>Storage was removed or unmounted.<span class="tag">&lt;/string></span>
+<span class="lineno"> 20 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"error_selecting_file"</span>>Error selecting File<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 21 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="error"><span class="attribute">name</span>=<span class="value">"internal_storage"</span></span>>Internal storage<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 22 </span><span class="tag">&lt;/resources></span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationMissingTranslation" style="display: none;">
+If an application has more than one locale, then all the strings declared in one language should also be translated in all other languages.<br/>
+<br/>
+If the string should <b>not</b> be translated, you can add the attribute <code>translatable="false"</code> on the <code>&lt;string></code> element, or you can define all your non-translatable strings in a resource file called <code>donottranslate.xml</code>. Or, you can ignore the issue with a <code>tools:ignore="MissingTranslation"</code> attribute.<br/>
+<br/>
+You can tell lint (and other tools) which language is the default language in your <code>res/values/</code> folder by specifying <code>tools:locale="languageCode"</code> for the root <code>&lt;resources></code> element in your resource file. (The <code>tools</code> prefix refers to the namespace declaration <code>http://schemas.android.com/tools</code>.)<br/>To suppress this error, use the issue id "MissingTranslation" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">MissingTranslation</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Messages</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Error</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 8/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationMissingTranslationLink" onclick="reveal('explanationMissingTranslation');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="MissingTranslationCardLink" onclick="hideid('MissingTranslationCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Compliance"></a>
+<a name="ExpiredTargetSdkVersion"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ExpiredTargetSdkVersionCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">TargetSdkVersion No Longer Supported</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:8</span>: <span class="message">Google Play requires that apps target API level 29 or higher.<br/>
+</span><br /><pre class="errorlines">
+<span class="lineno">  5 </span>
+<span class="lineno">  6 </span>    defaultConfig {
+<span class="lineno">  7 </span>        minSdkVersion <span class="number">7</span>
+<span class="caretline"><span class="lineno">  8 </span>        <span class="error">targetSdkVersion <span class="number">28</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  9 </span>    }
+<span class="lineno"> 10 </span>
+<span class="lineno"> 11 </span>    buildTypes {
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationExpiredTargetSdkVersion" style="display: none;">
+As of the second half of 2018, Google Play requires that new apps and app updates target API level 26 or higher.<br/>
+<br/>
+Configuring your app to target a recent API level ensures that users benefit from significant security and performance improvements, while still allowing your app to run on older Android versions (down to the <code>minSdkVersion</code>).<br/>
+<br/>
+To update your <code>targetSdkVersion</code>, follow the steps from "Meeting Google Play requirements for target API level",<br/>
+<a href="https://developer.android.com/distribute/best-practices/develop/target-sdk.html">https://developer.android.com/distribute/best-practices/develop/target-sdk.html</a><br/><div class="moreinfo">More info: <ul><li><a href="https://support.google.com/googleplay/android-developer/answer/113469#targetsdk">https://support.google.com/googleplay/android-developer/answer/113469#targetsdk</a>
+<li><a href="https://support.google.com/googleplay/android-developer/answer/113469#targetsdk">https://support.google.com/googleplay/android-developer/answer/113469#targetsdk</a>
+<li><a href="https://developer.android.com/distribute/best-practices/develop/target-sdk.html">https://developer.android.com/distribute/best-practices/develop/target-sdk.html</a>
+</ul></div>To suppress this error, use the issue id "ExpiredTargetSdkVersion" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ExpiredTargetSdkVersion</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Compliance</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Fatal</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 8/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationExpiredTargetSdkVersionLink" onclick="reveal('explanationExpiredTargetSdkVersion');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ExpiredTargetSdkVersionCardLink" onclick="hideid('ExpiredTargetSdkVersionCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Usability:Icons"></a>
+<a name="IconDipSize"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="IconDipSizeCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Icon density-independent size validation</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/drawable-xhdpi/ic_provider.png">../../src/main/res/drawable-xhdpi/ic_provider.png</a></span>: <span class="message">The image <code>ic_provider.png</code> varies significantly in its density-independent (dip) size across the various density versions: drawable-hdpi\ic_provider.png: 37x37 dp (56x56 px), drawable-mdpi\ic_provider.png: 28x28 dp (28x28 px), drawable-xhdpi\ic_provider.png: 28x28 dp (56x56 px), drawable-xxhdpi\ic_provider.png: 28x28 dp (84x84 px)</span><br />
+<ul></ul><button id="Location1DivLink" onclick="reveal('Location1Div');" />+ 3 Additional Locations...</button>
+<div id="Location1Div" style="display: none">
+Additional locations: <ul>
+<li> <span class="location"><a href="../../src/main/res/drawable-mdpi/ic_provider.png">../../src/main/res/drawable-mdpi/ic_provider.png</a></span>
+<li> <span class="location"><a href="../../src/main/res/drawable-xxhdpi/ic_provider.png">../../src/main/res/drawable-xxhdpi/ic_provider.png</a></span>
+<li> <span class="location"><a href="../../src/main/res/drawable-hdpi/ic_provider.png">../../src/main/res/drawable-hdpi/ic_provider.png</a></span>
+</ul>
+</div><br/><br/>
+<table>
+<tr><td><a href="../../src/main/res/drawable-mdpi/ic_provider.png"><img border="0" align="top" src="../../src/main/res/drawable-mdpi/ic_provider.png" /></a>
+</td><td><a href="../../src/main/res/drawable-hdpi/ic_provider.png"><img border="0" align="top" src="../../src/main/res/drawable-hdpi/ic_provider.png" /></a>
+</td><td><a href="../../src/main/res/drawable-xhdpi/ic_provider.png"><img border="0" align="top" src="../../src/main/res/drawable-xhdpi/ic_provider.png" /></a>
+</td><td><a href="../../src/main/res/drawable-xxhdpi/ic_provider.png"><img border="0" align="top" src="../../src/main/res/drawable-xxhdpi/ic_provider.png" /></a>
+</td></tr><tr><th>mdpi</th><th>hdpi</th><th>xhdpi</th><th>xxhdpi</th></tr>
+</table>
+</div>
+<div class="metadata"><div class="explanation" id="explanationIconDipSize" style="display: none;">
+Checks the all icons which are provided in multiple densities, all compute to roughly the same density-independent pixel (<code>dip</code>) size. This catches errors where images are either placed in the wrong folder, or icons are changed to new sizes but some folders are forgotten.<br/>To suppress this error, use the issue id "IconDipSize" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">IconDipSize</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Icons</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Usability</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 5/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationIconDipSizeLink" onclick="reveal('explanationIconDipSize');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="IconDipSizeCardLink" onclick="hideid('IconDipSizeCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="MissingIssues"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="MissingIssuesCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Disabled Checks</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+One or more issues were not run by lint, either
+because the check is not enabled by default, or because
+it was disabled with a command line flag or via one or
+more <code>lint.xml</code> configuration files in the project directories.
+<div id="SuppressedIssues" style="display: none;"><br/><br/><div class="issue">
+<div class="id">AppLinksAutoVerifyError<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Ensures that app links are correctly set and associated with website.<br/><div class="moreinfo">More info: <a href="https://g.co/appindexing/applinks">https://g.co/appindexing/applinks</a>
+</div>To suppress this error, use the issue id "AppLinksAutoVerifyError" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">AppLinksAutoVerifyWarning<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Ensures that app links are correctly set and associated with website.<br/><div class="moreinfo">More info: <a href="https://g.co/appindexing/applinks">https://g.co/appindexing/applinks</a>
+</div>To suppress this error, use the issue id "AppLinksAutoVerifyWarning" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">Assert<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Assertions will never be turned on in Android. (It was possible to enable it in Dalvik with <code>adb shell setprop debug.assert 1</code>, but it is not implemented in ART, the runtime for Android 5.0 and later.)<br/>
+<br/>
+This means that the assertion will never catch mistakes, and you should not use assertions from Java or Kotlin for debug build checking.<br/>
+<br/>
+Instead, perform conditional checking inside <code>if (BuildConfig.DEBUG) { }</code> blocks. That constant is a static final boolean which will be true only in debug builds, and false in release builds, and the compiler will completely remove all code inside the <code>if</code>-body from the app.<br/>
+<br/>
+For example, you can replace
+<pre>
+    assert(speed > 0, { "Message" })    // Kotlin
+    assert speed > 0 : "Message"        // Java
+</pre>
+with
+<pre>
+    if (BuildConfig.DEBUG &amp;&amp; !(speed > 0)) {
+        throw new AssertionError("Message")
+    }
+</pre>
+(Note: This lint check does not flag assertions purely asserting nullness or non-nullness in Java code; these are typically more intended for tools usage than runtime checks.)<br/>To suppress this error, use the issue id "Assert" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">BackButton<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+According to the Android Design Guide,<br/>
+<br/>
+"Other platforms use an explicit back button with label to allow the user to navigate up the application's hierarchy. Instead, Android uses the main action bar's app icon for hierarchical navigation and the navigation bar's back button for temporal navigation."<br/>
+This check is not very sophisticated (it just looks for buttons with the label "Back"), so it is disabled by default to not trigger on common scenarios like pairs of Back/Next buttons to paginate through screens.<br/><div class="moreinfo">More info: <a href="https://material.io/design/">https://material.io/design/</a>
+</div>To suppress this error, use the issue id "BackButton" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ConvertToWebp<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The WebP format is typically more compact than PNG and JPEG. As of Android 4.2.1 it supports transparency and lossless conversion as well. Note that there is a quickfix in the IDE which lets you perform conversion.<br/>
+<br/>
+Launcher icons must be in the PNG format.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "ConvertToWebp" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">DalvikOverride<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The Dalvik virtual machine will treat a package private method in one class as overriding a package private method in its super class, even if they are in separate packages.<br/>
+<br/>
+If you really did intend for this method to override the other, make the method <code>protected</code> instead.<br/>
+<br/>
+If you did <b>not</b> intend the override, consider making the method private, or changing its name or signature.<br/>
+<br/>
+Note that this check is disabled be default, because ART (the successor to Dalvik) no longer has this behavior.<br/>To suppress this error, use the issue id "DalvikOverride" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">DuplicateStrings<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Duplicate strings can make applications larger unnecessarily.<br/>
+<br/>
+This lint check looks for duplicate strings, including differences for strings where the only difference is in capitalization. Title casing and all uppercase can all be adjusted in the layout or in code.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/reference/android/widget/TextView.html#attr_android:inputType">https://developer.android.com/reference/android/widget/TextView.html#attr_android:inputType</a>
+</div>To suppress this error, use the issue id "DuplicateStrings" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">EasterEgg<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+An "easter egg" is code deliberately hidden in the code, both from potential users and even from other developers. This lint check looks for code which looks like it may be hidden from sight.<br/>To suppress this error, use the issue id "EasterEgg" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ExpensiveAssertion<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+In Kotlin, assertions are not handled the same way as from the Java programming language. In particular, they're just implemented as a library call, and inside the library call the error is only thrown if assertions are enabled.<br/>
+<br/>
+This means that the arguments to the <code>assert</code> call will <b>always</b> be evaluated. If you're doing any computation in the expression being asserted, that computation will unconditionally be performed whether or not assertions are turned on. This typically turns into wasted work in release builds.<br/>
+<br/>
+This check looks for cases where the assertion condition is nontrivial, e.g. it is performing method calls or doing more work than simple comparisons on local variables or fields.<br/>
+<br/>
+You can work around this by writing your own inline assert method instead:<br/>
+
+<pre>
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
+inline fun assert(condition: () -> Boolean) {
+    if (_Assertions.ENABLED &amp;&amp; !condition()) {
+        throw AssertionError()
+    }
+}
+</pre>
+<br/>
+In Android, because assertions are not enforced at runtime, instead use this:<br/>
+
+<pre>
+inline fun assert(condition: () -> Boolean) {
+    if (BuildConfig.DEBUG &amp;&amp; !condition()) {
+        throw AssertionError()
+    }
+}
+</pre>
+<br/>To suppress this error, use the issue id "ExpensiveAssertion" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">FieldGetter<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Accessing a field within the class that defines a getter for that field is at least 3 times faster than calling the getter. For simple getters that do nothing other than return the field, you might want to just reference the local field directly instead.<br/>
+<br/>
+<b>NOTE</b>: As of Android 2.3 (Gingerbread), this optimization is performed automatically by Dalvik, so there is no need to change your code; this is only relevant if you are targeting older versions of Android.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/training/articles/perf-tips#internal_get_set">https://developer.android.com/training/articles/perf-tips#internal_get_set</a>
+</div>To suppress this error, use the issue id "FieldGetter" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">GoogleAppIndexingApiWarning<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Adds URLs to get your app into the Google index, to get installs and traffic to your app from Google Search.<br/><div class="moreinfo">More info: <a href="https://g.co/AppIndexing/AndroidStudio">https://g.co/AppIndexing/AndroidStudio</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "GoogleAppIndexingApiWarning" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">GoogleAppIndexingWarning<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Adds URLs to get your app into the Google index, to get installs and traffic to your app from Google Search.<br/><div class="moreinfo">More info: <a href="https://g.co/AppIndexing/AndroidStudio">https://g.co/AppIndexing/AndroidStudio</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "GoogleAppIndexingWarning" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">IconExpectedSize<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+There are predefined sizes (for each density) for launcher icons. You should follow these conventions to make sure your icons fit in with the overall look of the platform.<br/><div class="moreinfo">More info: <a href="https://material.io/design/iconography/">https://material.io/design/iconography/</a>
+</div>To suppress this error, use the issue id "IconExpectedSize" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ImplicitSamInstance<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Kotlin's support for SAM (single accessor method) interfaces lets you pass a lambda to the interface. This will create a new instance on the fly even though there is no explicit constructor call. If you pass one of these lambdas or method references into a method which (for example) stores or compares the object identity, unexpected results may happen.<br/>To suppress this error, use the issue id "ImplicitSamInstance" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">InvalidPackage<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+This check scans through libraries looking for calls to APIs that are not included in Android.<br/>
+<br/>
+When you create Android projects, the classpath is set up such that you can only access classes in the API packages that are included in Android. However, if you add other projects to your libs/ folder, there is no guarantee that those .jar files were built with an Android specific classpath, and in particular, they could be accessing unsupported APIs such as java.applet.<br/>
+<br/>
+This check scans through library jars and looks for references to API packages that are not included in Android and flags these. This is only an error if your code calls one of the library classes which wind up referencing the unsupported package.<br/>To suppress this error, use the issue id "InvalidPackage" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">KotlinPropertyAccess<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+For a method to be represented as a property in Kotlin, strict &#8220;bean&#8221;-style prefixing must be used.<br/>
+<br/>
+Accessor methods require a &#8216;get&#8217; prefix or for boolean-returning methods an &#8216;is&#8217; prefix can be used.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#property-prefixes">https://android.github.io/kotlin-guides/interop.html#property-prefixes</a>
+</div>To suppress this error, use the issue id "KotlinPropertyAccess" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LambdaLast<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+To improve calling this code from Kotlin,<br/>
+parameter types eligible for SAM conversion should be last.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#lambda-parameters-last">https://android.github.io/kotlin-guides/interop.html#lambda-parameters-last</a>
+</div>To suppress this error, use the issue id "LambdaLast" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LintImplPsiEquals<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+You should never compare two PSI elements for equality with <code>equals</code>;<br/>
+use <code>isEquivalentTo(PsiElement)</code> instead.<br/>To suppress this error, use the issue id "LintImplPsiEquals" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LintImplUnexpectedDomain<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+This checks flags URLs to domains that have not been explicitly allowed for use as a documentation source.<br/>To suppress this error, use the issue id "LintImplUnexpectedDomain" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LogConditional<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The <code>BuildConfig</code> class provides a constant, <code>DEBUG</code>, which indicates whether the code is being built in release mode or in debug mode. In release mode, you typically want to strip out all the logging calls. Since the compiler will automatically remove all code which is inside a <code>if (false)</code> check, surrounding your logging calls with a check for <code>BuildConfig.DEBUG</code> is a good idea.<br/>
+<br/>
+If you <b>really</b> intend for the logging to be present in release mode, you can suppress this warning with a <code>@SuppressLint</code> annotation for the intentional logging calls.<br/>To suppress this error, use the issue id "LogConditional" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">MangledCRLF<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+On Windows, line endings are typically recorded as carriage return plus newline: \r\n.<br/>
+<br/>
+This detector looks for invalid line endings with repeated carriage return characters (without newlines). Previous versions of the ADT plugin could accidentally introduce these into the file, and when editing the file, the editor could produce confusing visual artifacts.<br/><div class="moreinfo">More info: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=375421">https://bugs.eclipse.org/bugs/show_bug.cgi?id=375421</a>
+</div>To suppress this error, use the issue id "MangledCRLF" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">MinSdkTooLow<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The value of the <code>minSdkVersion</code> property is too low and can be incremented without noticeably reducing the number of supported devices.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "MinSdkTooLow" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">NegativeMargin<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Margin values should be positive. Negative values are generally a sign that you are making assumptions about views surrounding the current one, or may be tempted to turn off child clipping to allow a view to escape its parent. Turning off child clipping to do this not only leads to poor graphical performance, it also results in wrong touch event handling since touch events are based strictly on a chain of parent-rect hit tests. Finally, making assumptions about the size of strings can lead to localization problems.<br/>To suppress this error, use the issue id "NegativeMargin" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">NewerVersionAvailable<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+This detector checks with a central repository to see if there are newer versions available for the dependencies used by this project. This is similar to the <code>GradleDependency</code> check, which checks for newer versions available in the Android SDK tools and libraries, but this works with any MavenCentral dependency, and connects to the library every time, which makes it more flexible but also <b>much</b> slower.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "NewerVersionAvailable" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">NoHardKeywords<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Do not use Kotlin&#8217;s hard keywords as the name of methods or fields.<br/>
+These require the use of backticks to escape when calling from Kotlin.<br/>
+Soft keywords, modifier keywords, and special identifiers are allowed.<br/>
+<br/>
+For example, Mockito&#8217;s <code>when</code> function requires backticks when used from Kotlin:<br/>
+<br/>
+    val callable = Mockito.mock(Callable::class.java)<br/>
+    Mockito.`when`(callable.call()).thenReturn(/* &#8230; */)<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#no-hard-keywords">https://android.github.io/kotlin-guides/interop.html#no-hard-keywords</a>
+</div>To suppress this error, use the issue id "NoHardKeywords" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">PermissionImpliesUnsupportedChromeOsHardware<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The <code>&lt;uses-permission></code> element should not require a permission that implies an unsupported Chrome OS hardware feature. Google Play assumes that certain hardware related permissions indicate that the underlying hardware features are required by default. To fix the issue, consider declaring the corresponding uses-feature element with <code>required="false"</code> attribute.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/topic/arc/manifest.html#implied-features">https://developer.android.com/topic/arc/manifest.html#implied-features</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "PermissionImpliesUnsupportedChromeOsHardware" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">Registered<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Activities, services and content providers should be registered in the <code>AndroidManifest.xml</code> file using <code>&lt;activity></code>, <code>&lt;service></code> and <code>&lt;provider></code> tags.<br/>
+<br/>
+If your activity is simply a parent class intended to be subclassed by other "real" activities, make it an abstract class.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/topics/manifest/manifest-intro.html">https://developer.android.com/guide/topics/manifest/manifest-intro.html</a>
+</div>To suppress this error, use the issue id "Registered" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">RequiredSize<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+All views must specify an explicit <code>layout_width</code> and <code>layout_height</code> attribute. There is a runtime check for this, so if you fail to specify a size, an exception is thrown at runtime.<br/>
+<br/>
+It's possible to specify these widths via styles as well. GridLayout, as a special case, does not require you to specify a size.<br/>To suppress this error, use the issue id "RequiredSize" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">SelectableText<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+If a <code>&lt;TextView></code> is used to display data, the user might want to copy that data and paste it elsewhere. To allow this, the <code>&lt;TextView></code> should specify <code>android:textIsSelectable="true"</code>.<br/>
+<br/>
+This lint check looks for TextViews which are likely to be displaying data: views whose text is set dynamically. This value will be ignored on platforms older than API 11, so it is okay to set it regardless of your <code>minSdkVersion</code>.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "SelectableText" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">StopShip<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Using the comment <code>// STOPSHIP</code> can be used to flag code that is incomplete but checked in. This comment marker can be used to indicate that the code should not be shipped until the issue is addressed, and lint will look for these. In Gradle projects, this is only checked for non-debug (release) builds.<br/>
+<br/>
+In Kotlin, the <code>TODO()</code> method is also treated as a stop ship marker; you can use it to make incomplete code compile, but it will throw an exception at runtime and therefore should be fixed before shipping releases.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "StopShip" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">SyntheticAccessor<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+A private inner class which is accessed from the outer class will force the compiler to insert a synthetic accessor; this means that you are causing extra overhead. This is not important in small projects, but is important for large apps running up against the 64K method handle limit, and especially for <b>libraries</b> where you want to make sure your library is as small as possible for the cases where your library is used in an app running up against the 64K limit.<br/>To suppress this error, use the issue id "SyntheticAccessor" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">TypographyQuotes<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Straight single quotes and double quotes, when used as a pair, can be replaced by "curvy quotes" (or directional quotes). This can make the text more readable.<br/>
+<br/>
+Note that you should never use grave accents and apostrophes to quote, `like this'.<br/>
+<br/>
+(Also note that you should not use curvy quotes for code fragments.)<br/><div class="moreinfo">More info: <a href="https://en.wikipedia.org/wiki/Quotation_mark">https://en.wikipedia.org/wiki/Quotation_mark</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "TypographyQuotes" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnknownNullness<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+To improve referencing this code from Kotlin, consider adding<br/>
+explicit nullness information here with either <code>@NonNull</code> or <code>@Nullable</code>.<br/>
+<br/>
+You can set the environment variable<br/>
+    <code>ANDROID_LINT_NULLNESS_IGNORE_DEPRECATED=true</code><br/>
+if you want lint to ignore classes and members that have been annotated with<br/>
+<code>@Deprecated</code>.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#nullability-annotations">https://android.github.io/kotlin-guides/interop.html#nullability-annotations</a>
+</div>To suppress this error, use the issue id "UnknownNullness" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnpackedNativeCode<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+This app loads native libraries using <code>System.loadLibrary()</code>.<br/>
+<br/>
+Consider adding <code>android:extractNativeLibs="false"</code> to the <code>&lt;application></code> tag in AndroidManifest.xml. Starting with Android 6.0, this will make installation faster, the app will take up less space on the device and updates will have smaller download sizes.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "UnpackedNativeCode" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnsupportedChromeOsHardware<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The <code>&lt;uses-feature></code> element should not require this unsupported Chrome OS hardware feature. Any uses-feature not explicitly marked with <code>required="false"</code> is necessary on the device to be installed on. Ensure that any features that might prevent it from being installed on a Chrome OS device are reviewed and marked as not required in the manifest.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/topic/arc/manifest.html#incompat-entries">https://developer.android.com/topic/arc/manifest.html#incompat-entries</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "UnsupportedChromeOsHardware" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnusedIds<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+This resource id definition appears not to be needed since it is not referenced from anywhere. Having id definitions, even if unused, is not necessarily a bad idea since they make working on layouts and menus easier, so there is not a strong reason to delete these.<br/>
+<br/>
+The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.<br/>
+<br/>
+You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "UnusedIds" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ValidActionsXml<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Ensures that an actions XML file is properly formed<br/>To suppress this error, use the issue id "ValidActionsXml" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">WrongThreadInterprocedural<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Searches for interprocedural call paths that violate thread annotations in the program. Tracks the flow of instantiated types and lambda expressions to increase accuracy across method boundaries.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/components/processes-and-threads.html#Threads">https://developer.android.com/guide/components/processes-and-threads.html#Threads</a>
+</div>To suppress this error, use the issue id "WrongThreadInterprocedural" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+</div>              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SuppressedIssuesLink" onclick="reveal('SuppressedIssues');">
+List Missing Issues</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="MissingIssuesCardLink" onclick="hideid('MissingIssuesCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="SuppressInfo"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="SuppressCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Suppressing Warnings and Errors</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+Lint errors can be suppressed in a variety of ways:<br/>
+<br/>
+1. With a <code>@SuppressLint</code> annotation in the Java code<br/>
+2. With a <code>tools:ignore</code> attribute in the XML file<br/>
+3. With a //noinspection comment in the source code<br/>
+4. With ignore flags specified in the <code>build.gradle</code> file, as explained below<br/>
+5. With a <code>lint.xml</code> configuration file in the project<br/>
+6. With a <code>lint.xml</code> configuration file passed to lint via the --config flag<br/>
+7. With the --ignore flag passed to lint.<br/>
+<br/>
+To suppress a lint warning with an annotation, add a <code>@SuppressLint("id")</code> annotation on the class, method or variable declaration closest to the warning instance you want to disable. The id can be one or more issue id's, such as <code>"UnusedResources"</code> or <code>{"UnusedResources","UnusedIds"}</code>, or it can be <code>"all"</code> to suppress all lint warnings in the given scope.<br/>
+<br/>
+To suppress a lint warning with a comment, add a <code>//noinspection id</code> comment on the line before the statement with the error.<br/>
+<br/>
+To suppress a lint warning in an XML file, add a <code>tools:ignore="id"</code> attribute on the element containing the error, or one of its surrounding elements. You also need to define the namespace for the tools prefix on the root element in your document, next to the <code>xmlns:android</code> declaration:<br/>
+<code>xmlns:tools="http://schemas.android.com/tools"</code><br/>
+<br/>
+To suppress a lint warning in a <code>build.gradle</code> file, add a section like this:<br/>
+
+<pre>
+android {
+    lintOptions {
+        disable 'TypographyFractions','TypographyQuotes'
+    }
+}
+</pre>
+<br/>
+Here we specify a comma separated list of issue id's after the disable command. You can also use <code>warning</code> or <code>error</code> instead of <code>disable</code> to change the severity of issues.<br/>
+<br/>
+To suppress lint warnings with a configuration XML file, create a file named <code>lint.xml</code> and place it at the root directory of the module in which it applies.<br/>
+<br/>
+The format of the <code>lint.xml</code> file is something like the following:<br/>
+
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;lint>
+    &lt;!-- Ignore everything in the test source set -->
+    &lt;issue id="all">
+        &lt;ignore path="\*/test/\*" />
+    &lt;/issue>
+
+    &lt;!-- Disable this given check in this project -->
+    &lt;issue id="IconMissingDensityFolder" severity="ignore" />
+
+    &lt;!-- Ignore the ObsoleteLayoutParam issue in the given files -->
+    &lt;issue id="ObsoleteLayoutParam">
+        &lt;ignore path="res/layout/activation.xml" />
+        &lt;ignore path="res/layout-xlarge/activation.xml" />
+        &lt;ignore regexp="(foo|bar)\.java" />
+    &lt;/issue>
+
+    &lt;!-- Ignore the UselessLeaf issue in the given file -->
+    &lt;issue id="UselessLeaf">
+        &lt;ignore path="res/layout/main.xml" />
+    &lt;/issue>
+
+    &lt;!-- Change the severity of hardcoded strings to "error" -->
+    &lt;issue id="HardcodedText" severity="error" />
+&lt;/lint>
+</pre>
+<br/>
+To suppress lint checks from the command line, pass the --ignore flag with a comma separated list of ids to be suppressed, such as:<br/>
+<code>$ lint --ignore UnusedResources,UselessLeaf /my/project/path</code><br/>
+<br/>
+For more information, see <a href="https://developer.android.com/studio/write/lint.html#config">https://developer.android.com/studio/write/lint.html#config</a><br/>
+
+            </div>
+            </div>
+          </section>    </div>
+  </main>
+</div>
+</body>
+</html>
